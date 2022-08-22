@@ -31,7 +31,7 @@ AFRAME.registerComponent('markers_start',{
 			
 			//if(number % 2 == 0) {
 				//IF EVEN CREATE LINK
-			markerEl.setAttribute('onclick',"location.href='https://google.com/search?q=marker1" + markersNameArray[k] + "'");
+			markerEl.setAttribute('onclick',"location.href='https://google.com/search?q=" + markersNameArray[k] + "'");
 			//}
 			markerEl.setAttribute('registerevents','');
 			sceneEl.appendChild(markerEl);
