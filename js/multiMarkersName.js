@@ -11,7 +11,7 @@ AFRAME.registerComponent('markers_start',{
 		var sceneEl = document.querySelector('a-scene');
 		
 		//list of the markers
-		for(var i=1; i<20; i++)
+		for(var i=1; i<26; i++)
 		{
 			var url="resources/markers/pattern-Individual_Blocks-"+i+".patt";
 			markersURLArray.push(url);
@@ -19,13 +19,13 @@ AFRAME.registerComponent('markers_start',{
 			//console.log(url);
 		}
 
-		for(var k=0; k<19; k++)
+		for(var k=0; k<25; k++)
 		{
 			var markerEl = document.createElement('a-marker');
 			markerEl.setAttribute('type','pattern');
 			markerEl.setAttribute('url',markersURLArray[k]);
 			markerEl.setAttribute('id',markersNameArray[k]);
-			markerEl.setAttribute('onclick',"location.href='https://www.google.de/" + markersNameArray[k] + "'");
+			markerEl.setAttribute('ontouchstart',"location.href='https://www.google.de/" + markersNameArray[k] + "'");
 
 			markerEl.setAttribute('registerevents','');
 			sceneEl.appendChild(markerEl);
@@ -35,9 +35,8 @@ AFRAME.registerComponent('markers_start',{
 			
 			img.setAttribute('src','#' + markersNameArray[k]);
 			img.setAttribute('id',markersNameArray[k]);
-			img.setAttribute('onclick',"location.href='https://www.google.de/" + markersNameArray[k] + "'");
 			img.object3D.position.set(0, 0.7, 0);
-			img.object3D.rotation.set(-90, 0, 0);
+			img.object3D.rotation.set(-80, 0, 0);
 
 			markerEl.appendChild(img);
 		}
