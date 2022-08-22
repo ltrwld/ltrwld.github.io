@@ -27,6 +27,7 @@ AFRAME.registerComponent('markers_start',{
 			markerEl.setAttribute('type','pattern');
 			markerEl.setAttribute('url',markersURLArray[k]);
 			markerEl.setAttribute('id',markersNameArray[k]);
+			markerEl.setAttribute('raycaster','objects: .clickable');
 			markerEl.setAttribute('emitevents','true');
 			markerEl.setAttribute('cursor','fuse: false; rayOrigin: mouse;');
 			
@@ -42,7 +43,7 @@ AFRAME.registerComponent('markers_start',{
 			
 			img.setAttribute('src','#' + markersNameArray[k]);
 			img.setAttribute('id',markersNameArray[k]);
-			img.setAttribute('scale','2 2 2');
+			img.setAttribute('scale','1 1 1');
 			img.setAttribute('class','clickable');
 			img.setAttribute('gesture-handler','');
 			img.object3D.position.set(0, 0.3, 0);
