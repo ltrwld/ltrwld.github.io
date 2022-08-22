@@ -30,11 +30,12 @@ AFRAME.registerComponent('markers_start',{
 			markerEl.setAttribute('raycaster','objects: .clickable');
 			markerEl.setAttribute('emitevents','true');
 			markerEl.setAttribute('cursor','fuse: false; rayOrigin: mouse;');
+			markerEl.setAttribute('href','https:twitter.com/' + markersNameArray[k]);
 			
-			if(number % 2 == 0) {
+			//if(number % 2 == 0) {
 				//IF EVEN CREATE LINK
-				markerEl.setAttribute('onclick',"location.href='https://www.google.de/" + markersNameArray[k] + "'");
-			}
+				//markerEl.setAttribute('onclick',"location.href='https://www.google.de/" + markersNameArray[k] + "'");
+			//}
 			markerEl.setAttribute('registerevents','');
 			sceneEl.appendChild(markerEl);
 
