@@ -14,14 +14,17 @@
 	</style>
 	<body style="margin : 0px; overflow: hidden; border: 10px solid rgb(255, 217, 0)">
 		<a-scene class="scene"
-				 markers_start 
+				 markers_start
+				 cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
+				 raycaster="objects: [gps-projected-entity-place];"
 				 vr-mode-ui="enabled: false" 
 				 color-space="sRGB" 
 				 renderer="gammaOutput: true" 
-				 embedded arjs='debugUIEnabled: false; 
-				 				sourceType: webcam; 
-								patternRatio: 0.85; 
-								trackingMethod: best;'>
+				 embedded
+				 arjs='debugUIEnabled: false; 
+				 	   sourceType: webcam; 
+					   patternRatio: 0.85; 
+					   trackingMethod: best;'>
 			<a-assets>
 				<img id="Marker_1" src="content/block-1.png">
 				<img id="Marker_2" src="content/block-2.png">

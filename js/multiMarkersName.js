@@ -28,11 +28,6 @@ AFRAME.registerComponent('markers_start',{
 			markerEl.setAttribute('url',markersURLArray[k]);
 			markerEl.setAttribute('id',markersNameArray[k]);
 			markerEl.setAttribute('class','marker');
-			
-			//if(number % 2 == 0) {
-				//IF EVEN CREATE LINK
-			markerEl.setAttribute('onclick',"location.href='https://google.com/search?q=" + markersNameArray[k] + "'");
-			//}
 			markerEl.setAttribute('registerevents','');
 			sceneEl.appendChild(markerEl);
 
@@ -43,7 +38,7 @@ AFRAME.registerComponent('markers_start',{
 			img.setAttribute('id',markersNameArray[k]);
 			img.setAttribute('scale','1 1 1');
 			img.setAttribute('class','image clickable');
-			img.setAttribute('onclick',"location.href='https://google.com/search?q=" + markersNameArray[k] + "'");
+			img.setAttribute('link',"href: https://google.com/search?q=" + markersNameArray[k]);
 			img.object3D.position.set(0, 0, 0);
 			img.object3D.rotation.set(180, 0, 0);
 
