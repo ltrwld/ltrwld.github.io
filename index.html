@@ -1,16 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <title>AR Wall - CERQ</title>
-    <meta name="description" content="AR Wall - CERQ">
-	 <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-	 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <head>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+		<script src="js/multiMarkersName.js"></script>
+    </head>
 
-	  <script src="js/multiMarkersName.js"></script>
-	</head>
-	<body style="width: 100vw !important;
-	height: 100vh !important; margin : 0px; overflow: hidden; border: 10px solid rgb(255, 217, 0)">
-		<a-scene markers_start vr-mode-ui="enabled: false" color-space="sRGB" renderer="gammaOutput: true" embedded arjs='debugUIEnabled: false; sourceType: webcam; patternRatio: 0.85; trackingMethod: best;'>
+    <body style="margin: 0; overflow: hidden;">
+        <a-scene
+            vr-mode-ui="enabled: false;"
+            loading-screen="enabled: false;"
+            arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+            id="scene"
+            embedded
+            gesture-detector
+        >
 			<a-assets>
 				<img id="Marker_1" src="content/block-1.png">
 				<img id="Marker_2" src="content/block-2.png">
@@ -36,6 +42,24 @@
 				<img id="Marker_22" src="https://picsum.photos/200">
 				<img id="Marker_23" src="https://picsum.photos/800/400">
 			</a-assets>
+			<a-marker
+                id="animated-marker"
+                type="pattern"
+                preset="custom"
+                url="resources/markers/pattern-Individual_Blocks-23"
+                raycaster="objects: .clickable"
+                emitevents="true"
+                cursor="fuse: false; rayOrigin: mouse;"
+                id="markerA"
+            >
+                <a-image
+                    src="#Marker_23"
+                    scale="1 1 1"
+                    class="clickable"
+                    rotation="-90 0 0"
+                    gesture-handler
+                ></a-image>
+            </a-marker>
     		<a-entity id='userCamera' camera>
 				<a-cursor> </a-cursor>
     		</a-entity>
