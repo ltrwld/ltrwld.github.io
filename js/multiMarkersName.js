@@ -25,8 +25,10 @@ AFRAME.registerComponent('markers_start',{
 			markerEl.setAttribute('type','pattern');
 			markerEl.setAttribute('url',markersURLArray[k]);
 			markerEl.setAttribute('id',markersNameArray[k]);
-			markerEl.setAttribute('onclick',"location.href='https://www.google.de/" + markersNameArray[k] + "'");
-
+			if(number % 2 == 0) {
+				//IF EVEN CREATE LINK
+				markerEl.setAttribute('onclick',"location.href='https://www.google.de/" + markersNameArray[k] + "'");
+			}
 			markerEl.setAttribute('registerevents','');
 			sceneEl.appendChild(markerEl);
 
