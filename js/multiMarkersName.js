@@ -38,22 +38,24 @@ AFRAME.registerComponent('markers_start',{
 			textEl.object3D.rotation.set(-90, 0, 0);
 
 			markerEl.appendChild(textEl);
-		}
-		for(let m = 0; m < 10; m++) {
+
+
+
+
 			var img = document.createElement('a-image');
-			img.src = "https://picsum.photos/200/301?id=" + m;
+			img.src = "https://picsum.photos/200/301?id=" + k;
 		  
 			img.setAttribute("class", "img-margin");
 		  
 			img.addEventListener("click", function() {
 		  
 			  for (var m = 0; m < images.length; m++) {
-				images[m].classList.remove('img-rounded-border');
+				images[k].classList.remove('img-rounded-border');
 			  }
 			  img.classList.add("img-rounded-border");
 			})
-			document.body.appendChild(img);
-		  }
+			document.body.appendChild(a-image);
+		}
 	}
 });
 
