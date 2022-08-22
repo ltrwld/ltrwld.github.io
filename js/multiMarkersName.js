@@ -27,7 +27,6 @@ AFRAME.registerComponent('markers_start',{
 			markerEl.setAttribute('type','pattern');
 			markerEl.setAttribute('url',markersURLArray[k]);
 			markerEl.setAttribute('id',markersNameArray[k]);
-			markerEl.setAttribute('raycaster','objects: .clickable');
 			markerEl.setAttribute('emitevents','true');
 			markerEl.setAttribute('cursor','fuse: false; rayOrigin: mouse;');
 			
