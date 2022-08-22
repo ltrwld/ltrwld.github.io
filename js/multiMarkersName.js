@@ -30,13 +30,14 @@ AFRAME.registerComponent('markers_start',{
 			sceneEl.appendChild(markerEl);
 
 			//Adding text to each marker
-			var textEl = document.createElement('a-image');
+			var img = document.createElement('a-image');
 			
-			textEl.setAttribute('src','#img-'+k);
-			textEl.object3D.position.set(0, 0.7, 0);
-			textEl.object3D.rotation.set(-90, 0, 0);
+			img.setAttribute('src',markersNameArray[k]);
+			img.setAttribute('id',markersNameArray[k]);
+			img.object3D.position.set(0, 0.7, 0);
+			img.object3D.rotation.set(-90, 0, 0);
 
-			markerEl.appendChild(textEl);
+			markerEl.appendChild(img);
 		}
 	}
 });
