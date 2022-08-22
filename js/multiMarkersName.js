@@ -22,10 +22,11 @@ AFRAME.registerComponent('markers_start',{
 		for(var k=0; k<23; k++)
 		{
 			var markerEl = document.createElement('a-marker');
+			const number = k;
 			markerEl.setAttribute('type','pattern');
 			markerEl.setAttribute('url',markersURLArray[k]);
 			markerEl.setAttribute('id',markersNameArray[k]);
-			if(k % 2 == 0) {
+			if(number % 2 == 0) {
 				//IF EVEN CREATE LINK
 				markerEl.setAttribute('onclick',"location.href='https://www.google.de/" + markersNameArray[k] + "'");
 			}
