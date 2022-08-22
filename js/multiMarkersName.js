@@ -37,11 +37,15 @@ AFRAME.registerComponent('markers_start',{
 			img.object3D.position.set(0, 0.7, 0);
 			img.object3D.rotation.set(-90, 0, 0);
 
-			let anchor = document.createElement('a');
-			anchor.href = "https://linuxhint.com/";
+			var anchor = document.createElement('a');
+			anchor.setAttribute('href','#' + markersNameArray[k]);
+			anchor.setAttribute('id',markersNameArray[k]);
 			// Append the textNode as a child to anchor.
-			anchor.appendChild(img);
+			
 			markerEl.appendChild(img);
+			anchor.appendChild(markerEl);
+
+			document.body.appendChild(anchor);
 		}
 	}
 });
