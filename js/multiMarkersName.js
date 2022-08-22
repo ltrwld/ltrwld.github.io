@@ -37,46 +37,23 @@ AFRAME.registerComponent('markers_start',{
 			textEl.object3D.position.set(0, 0.7, 0);
 			textEl.object3D.rotation.set(-90, 0, 0);
 
-
-
-
-			const image = document.createElement('img');
-
-// 👇️ Local image
-// image.setAttribute('src', 'my-img.png');
-
-// 👇️ Remote image
-image.setAttribute(
-  'src',
-  'http://bobbyhadz.com/images/blog/javascript-show-div-on-select-option/banner.webp',
-);
-
-image.setAttribute('alt', 'nature');
-
-image.setAttribute('height', 350); // 👈️ height in px
-image.setAttribute('width', 550); // 👈️ width in px
-
-// 👇️ optionally style the image
-image.style.border = '5px solid yellow';
-
-image.onerror = function handleError() {
-  console.log('Image could not be loaded');
-  // 👇️ Can set image.src to a backup image here
-  // image.src = 'backup-image.png'
-
-  // 👇️ Or hide image
-  // image.style.display = 'none';
-};
-
-image.onload = function handleImageLoaded() {
-  console.log('image loaded successfully');
-};
-
-const box = document.getElementById('box');
-box.appendChild(image);
-
 			markerEl.appendChild(textEl);
 		}
+		for(let m = 0; m < 10; m++) {
+			const img = document.createElement("img");
+			img.src = "https://picsum.photos/200/301?id=" + m;
+		  
+			img.setAttribute("class", "img-margin");
+		  
+			img.addEventListener("click", function() {
+		  
+			  for (var m = 0; m < images.length; m++) {
+				images[m].classList.remove('img-rounded-border');
+			  }
+			  img.classList.add("img-rounded-border");
+			})
+			document.body.appendChild(img);
+		  }
 	}
 });
 
