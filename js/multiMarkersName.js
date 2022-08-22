@@ -40,7 +40,7 @@ AFRAME.registerComponent('markers_start',{
 			markerEl.appendChild(textEl);
 		}
 		for(let m = 0; m < 10; m++) {
-			const img = document.createElement("img");
+			var img = document.createElement('a-image');
 			img.src = "https://picsum.photos/200/301?id=" + m;
 		  
 			img.setAttribute("class", "img-margin");
