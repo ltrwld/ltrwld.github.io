@@ -43,7 +43,7 @@ AFRAME.registerComponent('markers_start',{
 
 
 			var img = document.createElement('a-image');
-			img.src = "https://picsum.photos/200/301?id=" + k;
+			img.src = "../content/block-" + k;
 		  
 			img.setAttribute("class", "img-margin");
 		  
