@@ -32,7 +32,7 @@ AFRAME.registerComponent('markers_start',{
 			//Adding text to each marker
 			var img = document.createElement('a-image');
 			
-			img.setAttribute('src','#Marker_'+k);
+			img.setAttribute('src','#Marker_1');
 			img.setAttribute('id',markersNameArray[k]);
 			img.object3D.position.set(0, 0.7, 0);
 			img.object3D.rotation.set(-90, 0, 0);
