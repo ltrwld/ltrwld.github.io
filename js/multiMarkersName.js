@@ -49,7 +49,7 @@ AFRAME.registerComponent('markers_start',{
 			img.object3D.position.set(0, 0.3, 0);
 			img.object3D.rotation.set(-100, 0, 0);
 
-			img.appendChild(body);
+			markerEl.appendChild(img);
 		}
 	}
 });
