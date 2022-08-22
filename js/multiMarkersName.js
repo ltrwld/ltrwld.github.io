@@ -34,18 +34,11 @@ AFRAME.registerComponent('markers_start',{
 			
 			img.setAttribute('src','#' + markersNameArray[k]);
 			img.setAttribute('id',markersNameArray[k]);
+			img.setAttribute('onclick',"location.href='https://www.google.de/" + markersNameArray[k] "'");
 			img.object3D.position.set(0, 0.7, 0);
 			img.object3D.rotation.set(-90, 0, 0);
 
-			var anchor = document.createElement('a');
-			anchor.setAttribute('href','#' + markersNameArray[k]);
-			anchor.setAttribute('id',markersNameArray[k]);
-			// Append the textNode as a child to anchor.
-			
 			markerEl.appendChild(img);
-			anchor.appendChild(markerEl);
-
-			document.body.appendChild(anchor);
 		}
 	}
 });
