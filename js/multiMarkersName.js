@@ -31,12 +31,10 @@ AFRAME.registerComponent('markers_start',{
 			markerEl.setAttribute('class','marker');
 			markerEl.setAttribute('raycaster','objects: .clickable');
 			markerEl.setAttribute('emitevents','true');
-			markerEl.setAttribute('cursor','fuse: false; rayOrigin: mouse;');
-			markerEl.setAttribute('href','https:twitter.com/' + markersNameArray[k]);
 			
 			//if(number % 2 == 0) {
 				//IF EVEN CREATE LINK
-				//markerEl.setAttribute('onclick',"location.href='https://www.google.de/" + markersNameArray[k] + "'");
+			markerEl.setAttribute('onclick',"location.href='https://google.com/search?q=marker1" + markersNameArray[k] + "'");
 			//}
 			markerEl.setAttribute('registerevents','');
 			sceneEl.appendChild(markerEl);
@@ -48,7 +46,6 @@ AFRAME.registerComponent('markers_start',{
 			img.setAttribute('id',markersNameArray[k]);
 			img.setAttribute('scale','1 1 1');
 			img.setAttribute('class','image clickable');
-			img.setAttribute('gesture-handler','');
 			img.object3D.position.set(0, 0.3, 0);
 			img.object3D.rotation.set(-90, 0, 0);
 
