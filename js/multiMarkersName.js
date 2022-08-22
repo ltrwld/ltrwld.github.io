@@ -40,21 +40,21 @@ AFRAME.registerComponent('markers_start',{
 			markerEl.appendChild(textEl);
 
 
+			var scene = document.querySelector('a-scene');
+			var cylinder = document.createElement('a-cylinder');
+			cylinder.setAttribute('color', '#FF9500');
+			cylinder.setAttribute('height', '2');
+			cylinder.setAttribute('radius', '0.75');
+			cylinder.setAttribute('position', '3 1 0');
+			scene.appendChild(cylinder);
+			var t = 0;
+			function render() {
+			  t += 0.01;
+			  requestAnimationFrame(render);
+			  cylinder.setAttribute('position', '3 '+(Math.sin(t*2)+1)+' 0');
+			}
+			render();
 
-
-			var img = document.createElement('a-image');
-			img.src = "../content/block-" + k;
-		  
-			img.setAttribute("class", "img-margin");
-		  
-			img.addEventListener("click", function() {
-		  
-			  for (var m = 0; m < images.length; m++) {
-				images[k].classList.remove('img-rounded-border');
-			  }
-			  img.classList.add("img-rounded-border");
-			})
-			document.body.appendChild(a-image);
 		}
 	}
 });
