@@ -47,7 +47,7 @@ AFRAME.registerComponent('markers_start',{
 			img.setAttribute('class','clickable');
 			img.setAttribute('gesture-handler','');
 			img.object3D.position.set(0, 0.3, 0);
-			img.object3D.rotation.set(-100, 0, 0);
+			img.object3D.rotation.set(-90, 0, 0);
 
 			markerEl.appendChild(img);
 		}
