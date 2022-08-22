@@ -25,12 +25,9 @@ AFRAME.registerComponent('markers_start',{
 			const number = k;
 		
 			markerEl.setAttribute('type','pattern');
-			markerEl.setAttribute('preset','hiro');
 			markerEl.setAttribute('url',markersURLArray[k]);
 			markerEl.setAttribute('id',markersNameArray[k]);
 			markerEl.setAttribute('class','marker');
-			markerEl.setAttribute('raycaster','objects: .clickable');
-			markerEl.setAttribute('emitevents','true');
 			
 			//if(number % 2 == 0) {
 				//IF EVEN CREATE LINK
@@ -47,7 +44,7 @@ AFRAME.registerComponent('markers_start',{
 			img.setAttribute('scale','1 1 1');
 			img.setAttribute('class','image clickable');
 			img.object3D.position.set(0, 0.3, 0);
-			img.object3D.rotation.set(-90, 0, 0);
+			img.object3D.rotation.set(-100, 0, 0);
 
 			markerEl.appendChild(img);
 		}
