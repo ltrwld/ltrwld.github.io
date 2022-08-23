@@ -24,12 +24,15 @@ AFRAME.registerComponent('markers_start',{
 			var markerEl = document.createElement('a-marker');
 		
 			markerEl.setAttribute('type','pattern');
-			markerEl.setAttribute('preset','hiro');
+			markerEl.setAttribute('preset','custom');
 			markerEl.setAttribute('url',markersURLArray[k]);
 			markerEl.setAttribute('id',markersNameArray[k]);
+
+			markerEl.setAttribute('cursor','fuse: false; rayOrigin: mouse;');
+			markerEl.setAttribute('emitevents','true');
+
 			markerEl.setAttribute('class','marker');
 			markerEl.setAttribute('registerevents','');
-			
 			sceneEl.appendChild(markerEl);
 
 			//Adding text to each marker
