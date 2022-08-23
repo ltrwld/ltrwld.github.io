@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>134 AR Wall - CERQ</title>
+    <title>135 AR Wall - CERQ</title>
     <meta name="description" content="AR Wall - CERQ">
 	 <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
 	 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
@@ -12,6 +12,7 @@
 	height: 100vh !important; margin : 0px; overflow: hidden;">
 		<a-scene cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
 				 raycaster="objects: .clickable"
+				 renderer="logarithmicDepthBuffer: true"
 				 markers_start
 				 vr-mode-ui="enabled: false" 
 				 color-space="sRGB" 

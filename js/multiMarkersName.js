@@ -27,6 +27,12 @@ AFRAME.registerComponent('markers_start',{
 			markerEl.setAttribute('type','pattern');
 			markerEl.setAttribute('url',markersURLArray[k]);
 			markerEl.setAttribute('id',markersNameArray[k]);
+
+			markerEl.setAttribute('smooth','true');
+			markerEl.setAttribute('smoothCount','7');
+			markerEl.setAttribute('smoothTolerance','0.1');
+			markerEl.setAttribute('smoothThreshold','4');
+
 			markerEl.setAttribute('class','marker');
 			
 			markerEl.setAttribute('registerevents','');
