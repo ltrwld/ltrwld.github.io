@@ -29,10 +29,10 @@ AFRAME.registerComponent('markers_start',{
 			markerEl.setAttribute('id',markersNameArray[k]);
 			markerEl.setAttribute('class','marker');
 			markerEl.setAttribute('registerevents','');
-			
+
 			markerEl.setAttribute('raycaster','objects: .clickable');
 			markerEl.setAttribute('emitevents','true');
-			markerEl.setAttribute('cursor','fuse: true; rayOrigin: mouse;');
+			markerEl.setAttribute('cursor','fuse: false; rayOrigin: mouse;');
 
 			sceneEl.appendChild(markerEl);
 
