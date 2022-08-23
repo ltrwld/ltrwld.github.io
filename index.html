@@ -10,7 +10,9 @@
 	</head>
 	<body style="width: 100vw !important;
 	height: 100vh !important; margin : 0px; overflow: hidden;">
-		<a-scene markers_start 
+		<a-scene cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
+				 raycaster="objects: .clickable"
+				 markers_start
 				 vr-mode-ui="enabled: false" 
 				 color-space="sRGB" 
 				 renderer="gammaOutput: true" 
