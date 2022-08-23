@@ -48,8 +48,8 @@ AFRAME.registerComponent('markers_start',{
 				//Adding link to each marker
 				var anchor = document.createElement('a-link');
 			
-				anchor.setAttribute('title',markersNameArray[k]);
-				img.setAttribute('href',"https://google.com/search?q=" + marker);
+				anchor.setAttribute('title',marker);
+				anchor.setAttribute('href',"https://google.com/search?q=" + marker);
 	
 				sceneEl.appendChild(anchor);
 		}
