@@ -29,7 +29,7 @@ AFRAME.registerComponent('markers_start',{
 			markerEl.setAttribute('id',markersNameArray[k]);
 
 			markerEl.setAttribute('cursor','fuse: false; rayOrigin: mouse;');
-			markerEl.setAttribute('raycaster','objects: .clickable' + markersNameArray[k]);
+			markerEl.setAttribute('raycaster','objects: '+markersNameArray[k]);
 			markerEl.setAttribute('emitevents','true');
 
 			markerEl.setAttribute('class','marker');
@@ -43,7 +43,7 @@ AFRAME.registerComponent('markers_start',{
 			img.setAttribute('src','#' + marker);
 			img.setAttribute('id',marker);
 			img.setAttribute('scale','1 1 1');
-			img.setAttribute('class','clickable' + markersNameArray[k]);
+			img.setAttribute('class',markersNameArray[k]);
 			img.setAttribute('link',"href: https://google.com/search?q=" + marker);
 			img.object3D.position.set(0, 0, 0);
 			img.object3D.rotation.set(160, 0, 0);
