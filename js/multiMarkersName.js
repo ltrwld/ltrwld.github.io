@@ -6,6 +6,16 @@ var markersNameArray=[];
 
 AFRAME.registerComponent('markers_start',{
 	init:function(){
+
+		//force to fullscreen
+		if (elem.requestFullscreen) {
+			elem.requestFullscreen();
+		  } else if (elem.webkitRequestFullscreen) { /* Safari */
+			elem.webkitRequestFullscreen();
+		  } else if (elem.msRequestFullscreen) { /* IE11 */
+			elem.msRequestFullscreen();
+		  }
+		  
 		console.log('Add markers to the scene');
 
 		var sceneEl = document.querySelector('a-scene');
