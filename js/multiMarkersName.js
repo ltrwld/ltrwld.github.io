@@ -50,7 +50,7 @@ AFRAME.registerComponent('markers_start',{
 			anchor.setAttribute('title',markersNameArray[k]);
 			img.setAttribute('href',"https://google.com/search?q=" + markersNameArray[k]);
 
-			sceneEl.appendChild(link);
+			sceneEl.appendChild(anchor);
 		}
 	}
 });
