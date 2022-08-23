@@ -28,12 +28,12 @@ AFRAME.registerComponent('markers_start',{
 			markerEl.setAttribute('url',markersURLArray[k]);
 			markerEl.setAttribute('id',markersNameArray[k]);
 			markerEl.setAttribute('class','marker');
+			
+			//if(number % 2 == 0) {
+				//IF EVEN CREATE LINK
+			markerEl.setAttribute('onclick',"location.href='https://google.com/search?q=" + markersNameArray[k] + "'");
+			//}
 			markerEl.setAttribute('registerevents','');
-
-			markerEl.setAttribute('raycaster','objects: .clickable');
-			markerEl.setAttribute('emitevents','true');
-			markerEl.setAttribute('cursor','fuse: false; rayOrigin: mouse;');
-
 			sceneEl.appendChild(markerEl);
 
 			//Adding text to each marker
@@ -42,10 +42,10 @@ AFRAME.registerComponent('markers_start',{
 			img.setAttribute('src','#' + markersNameArray[k]);
 			img.setAttribute('id',markersNameArray[k]);
 			img.setAttribute('scale','1 1 1');
-			img.setAttribute('class','clickable');
-			img.setAttribute('link',"href: https://google.com/search?q=" + markersNameArray[k]);
-			img.object3D.position.set(0, 0, 0);
-			img.object3D.rotation.set(165, 0, 0);
+			img.setAttribute('class','image clickable');
+			img.setAttribute('onclick',"location.href='https://google.com/search?q=" + markersNameArray[k] + "'");
+			img.object3D.position.set(0, 0.3, 0);
+			img.object3D.rotation.set(65, 0, 0);
 
 			markerEl.appendChild(img);
 		}
