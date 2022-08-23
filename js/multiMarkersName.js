@@ -44,6 +44,14 @@ AFRAME.registerComponent('markers_start',{
 			img.object3D.rotation.set(160, 0, 0);
 
 			markerEl.appendChild(img);
+
+				//Adding link to each marker
+				var anchor = document.createElement('a-link');
+			
+				anchor.setAttribute('title',markersNameArray[k]);
+				img.setAttribute('href',"https://google.com/search?q=" + marker);
+	
+				sceneEl.appendChild(anchor);
 		}
 	}
 });
