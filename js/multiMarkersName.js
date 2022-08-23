@@ -46,7 +46,7 @@ AFRAME.registerComponent('markers_start',{
 			img.setAttribute('class',markersNameArray[k]);
 			img.setAttribute('link',"href: https://google.com/search?q=" + marker);
 			img.object3D.position.set(0, 0, 0);
-			img.object3D.rotation.set(160, 0, 0);
+			img.object3D.rotation.set(180, 0, 0);
 
 			markerEl.appendChild(img);
 
