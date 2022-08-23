@@ -33,14 +33,15 @@ AFRAME.registerComponent('markers_start',{
 
 			//Adding text to each marker
 			var img = document.createElement('a-image');
+			var marker = markersNameArray[k];
 			
-			img.setAttribute('src','#' + markersNameArray[k]);
-			img.setAttribute('id',markersNameArray[k]);
+			img.setAttribute('src','#' + marker);
+			img.setAttribute('id',marker);
 			img.setAttribute('scale','1 1 1');
 			img.setAttribute('class','clickable');
-			img.setAttribute('link',"href: https://google.com/search?q=" + markersNameArray[k]);
+			img.setAttribute('link',"href: https://google.com/search?q=" + marker);
 			img.object3D.position.set(0, 0, 0);
-			img.object3D.rotation.set(180, 0, 0);
+			img.object3D.rotation.set(160, 0, 0);
 
 			markerEl.appendChild(img);
 		}
