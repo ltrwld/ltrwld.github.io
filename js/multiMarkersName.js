@@ -72,15 +72,3 @@ AFRAME.registerComponent('registerevents', {
 			});
 		},
 	});
-
-//if click fullscreen
-	addEventListener("touchstart", function() {
-		var
-			  full = document.documentElement
-			, rfs =
-				   full.requestFullScreen
-				|| full.webkitRequestFullScreen
-				|| full.mozRequestFullScreen
-		;
-		rfs.call(full);
-	});
