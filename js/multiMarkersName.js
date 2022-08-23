@@ -32,7 +32,7 @@ AFRAME.registerComponent('markers_start',{
 			markerEl.setAttribute('raycaster','objects: '+markersNameArray[k]);
 			markerEl.setAttribute('emitevents','true');
 
-			markerEl.setAttribute('class','marker');
+			markerEl.setAttribute('class',markersNameArray[k]);
 			markerEl.setAttribute('registerevents','');
 			sceneEl.appendChild(markerEl);
 
