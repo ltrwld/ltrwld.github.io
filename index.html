@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>15 AR Wall - CERQ</title>
+    <title>AR Wall - CERQ</title>
     <meta name="description" content="AR Wall - CERQ">
 	 <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
 	 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
@@ -15,14 +15,10 @@
 	<body style="margin : 0px; overflow: hidden; border: 10px solid rgb(255, 217, 0)">
 		<a-scene class="scene"
 				 markers_start
-				 cursor="fuse: false; rayOrigin: mouse;"
 				 vr-mode-ui="enabled: false" 
 				 color-space="sRGB" 
-				 raycaster="objects: .clickable"
-				 emitevents="true"
 				 renderer="gammaOutput: true" 
 				 embedded
-				 gesture-detector
 				 arjs='debugUIEnabled: false; 
 				 	   sourceType: webcam; 
 					   patternRatio: 0.85; 
