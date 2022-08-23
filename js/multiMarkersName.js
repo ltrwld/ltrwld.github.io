@@ -27,12 +27,9 @@ AFRAME.registerComponent('markers_start',{
 			markerEl.setAttribute('preset','hiro');
 			markerEl.setAttribute('url',markersURLArray[k]);
 			markerEl.setAttribute('id',markersNameArray[k]);
-
-			markerEl.setAttribute('cursor','fuse: false; rayOrigin: mouse;');
-			markerEl.setAttribute('emitevents','true');
-
 			markerEl.setAttribute('class','marker');
 			markerEl.setAttribute('registerevents','');
+			
 			sceneEl.appendChild(markerEl);
 
 			//Adding text to each marker
