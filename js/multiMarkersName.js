@@ -8,6 +8,8 @@ AFRAME.registerComponent('markers_start',{
 	init:function(){
 
 		//force to fullscreen
+		var elem = document.getElementById("body");
+
 		if (elem.requestFullscreen) {
 			elem.requestFullscreen();
 		  } else if (elem.webkitRequestFullscreen) { /* Safari */
@@ -15,7 +17,7 @@ AFRAME.registerComponent('markers_start',{
 		  } else if (elem.msRequestFullscreen) { /* IE11 */
 			elem.msRequestFullscreen();
 		  }
-		  
+
 		console.log('Add markers to the scene');
 
 		var sceneEl = document.querySelector('a-scene');
