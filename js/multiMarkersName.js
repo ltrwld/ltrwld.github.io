@@ -76,11 +76,11 @@ AFRAME.registerComponent('registerevents', {
 //if click fullscreen
 	addEventListener("touchstart", function() {
 		var
-			  el = document.documentElement
+			  full = document.documentElement
 			, rfs =
-				   el.requestFullScreen
-				|| el.webkitRequestFullScreen
-				|| el.mozRequestFullScreen
+				   full.requestFullScreen
+				|| full.webkitRequestFullScreen
+				|| full.mozRequestFullScreen
 		;
-		rfs.call(el);
+		rfs.call(full);
 	});
