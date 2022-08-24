@@ -38,9 +38,10 @@ AFRAME.registerComponent('markers_start',{
 
 			//Adding text to each marker
 			var img = document.createElement('a-image');
+			var link = link + k;
 			
 			img.setAttribute('src','#' + markersNameArray[k]);
-			img.setAttribute('link','href: ' + link+k);
+			img.setAttribute('link','href: ' + link);
 			img.setAttribute('id',markersNameArray[k]);
 			img.setAttribute('scale','1 1 1'); 
 			img.setAttribute('class','image clickable');
