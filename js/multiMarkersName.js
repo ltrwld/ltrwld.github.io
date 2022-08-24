@@ -13,7 +13,7 @@ AFRAME.registerComponent('markers_start',{
 		//list of the markers
 		for(var i=1; i<23; i++)
 		{
-			var url="resources/markers/pattern-marker-"+i+".patt";
+			var url="resources/markers/pattern-Individual_Blocks-"+i+".patt";
 			markersURLArray.push(url);
 			markersNameArray.push('Marker_'+i);
 			//console.log(url);
@@ -28,8 +28,6 @@ AFRAME.registerComponent('markers_start',{
 			markerEl.setAttribute('url',markersURLArray[k]);
 			markerEl.setAttribute('id',markersNameArray[k]);
 			markerEl.setAttribute('class','marker');
-
-			markerEl.setAttribute('smooth','true');
 			
 			markerEl.setAttribute('registerevents','');
 			sceneEl.appendChild(markerEl);
