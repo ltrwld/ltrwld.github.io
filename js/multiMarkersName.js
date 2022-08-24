@@ -13,7 +13,7 @@ AFRAME.registerComponent('markers_start',{
 		//list of the markers
 		for(var i=1; i<23; i++)
 		{
-			var url="resources/markers/pattern-Individual_Blocks-"+i+".patt";
+			var url="resources/markers/pattern-marker-"+i+".patt";
 			markersURLArray.push(url);
 			markersNameArray.push('Marker_'+i);
 			//console.log(url);
