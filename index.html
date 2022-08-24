@@ -16,10 +16,14 @@
 				 vr-mode-ui="enabled: false" 
 				 renderer="gammaOutput: true" 
 				 embedded arjs='debugUIEnabled: false; 
-				 				sourceType: webcam; 
-								patternRatio: 0.5; 
+				 				sourceType: webcam;
+								sourceWidth:1920; 
+								sourceHeight:1080; 
+								displayWidth: 1920; 
+								displayHeight: 1080;
 								trackingMethod: best; 
-								detectionMode: mono_and_matrix; matrixCodeType: 3x3;'
+								detectionMode: mono_and_matrix; 
+								matrixCodeType: 4x4;'
 				 embedded
 				 gesture-detector>
 			<a-assets>
