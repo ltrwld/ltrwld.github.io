@@ -24,10 +24,12 @@ AFRAME.registerComponent('markers_start',{
 			var markerEl = document.createElement('a-marker');
 			const number = k;
 		
-			markerEl.setAttribute('type','barcode');
+			markerEl.setAttribute('type','pattern');
 			markerEl.setAttribute('url',markersURLArray[k]);
 			markerEl.setAttribute('id',markersNameArray[k]);
 			markerEl.setAttribute('class','marker');
+
+			markerEl.setAttribute('smooth','true');
 			
 			markerEl.setAttribute('registerevents','');
 			sceneEl.appendChild(markerEl);
