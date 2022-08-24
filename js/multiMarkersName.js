@@ -25,7 +25,6 @@ AFRAME.registerComponent('markers_start',{
 			const number = k;
 		
 			markerEl.setAttribute('type','pattern');
-			markerEl.setAttribute('preset','hiro');
 			markerEl.setAttribute('url',markersURLArray[k]);
 			markerEl.setAttribute('id',markersNameArray[k]);
 			markerEl.setAttribute('class','marker');
