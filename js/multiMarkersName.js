@@ -10,24 +10,16 @@ AFRAME.registerComponent('markers_start',{
 
 		var sceneEl = document.querySelector('a-scene');
 		
-		//list of the markers
-		for(var i=1; i<2; i++)
-		{
-			var url="resources/markers/pattern-Individual_Blocks-"+i+".patt";
-			markersURLArray.push(url);
-			markersNameArray.push('Marker_'+i);
-			//console.log(url);
-		}
 
-		for(var k=0; k<1; k++)
+		for(var k=1; k<2; k++)
 		{
 			var markerEl = document.createElement('a-marker');
-			const number = k;
 		
-			markerEl.setAttribute('type','pattern');
-			markerEl.setAttribute('url',markersURLArray[k]);
-			markerEl.setAttribute('id',markersNameArray[k]);
-			markerEl.setAttribute('class','marker');
+			markerEl.setAttribute('type','barcode');
+			markerEl.setAttribute('type','barcode');
+			markerEl.setAttribute('value',k);
+			markerEl.setAttribute('id',k);
+			markerEl.setAttribute('class','marker-' + k);
 			
 			markerEl.setAttribute('registerevents','');
 			sceneEl.appendChild(markerEl);
@@ -35,9 +27,9 @@ AFRAME.registerComponent('markers_start',{
 			//Adding text to each marker
 			var img = document.createElement('a-image');
 			
-			img.setAttribute('src','#' + markersNameArray[k]);
-			img.setAttribute('link','href: https://google.com/search?q=' + markersNameArray[k]);
-			img.setAttribute('id',markersNameArray[k]);
+			img.setAttribute('src','#Marker_' + k);
+			img.setAttribute('link','href: https://google.com/search?q=Marker' + k);
+			img.setAttribute('id',k);
 			img.setAttribute('scale','1 1 1'); 
 			img.setAttribute('class','image clickable');
 			img.object3D.position.set(0, 0.3, 0);

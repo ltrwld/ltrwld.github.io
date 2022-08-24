@@ -14,12 +14,12 @@
 				 raycaster="objects: .clickable"
 				 markers_start
 				 vr-mode-ui="enabled: false" 
-				 color-space="sRGB" 
 				 renderer="gammaOutput: true" 
 				 embedded arjs='debugUIEnabled: false; 
 				 				sourceType: webcam; 
-								patternRatio: 0.85; 
-								trackingMethod: best;' 
+								patternRatio: 0.5; 
+								trackingMethod: best; 
+								detectionMode: mono_and_matrix; matrixCodeType: 3x3;'
 				 embedded
 				 gesture-detector>
 			<a-assets>
