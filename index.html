@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>25 AR Wall - CERQ</title>
+    <title>26 AR Wall - CERQ</title>
     <meta name="description" content="AR Wall - CERQ">
 	 <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
 	 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
@@ -18,7 +18,9 @@
 				 renderer="gammaOutput: true" 
 				 embedded arjs='debugUIEnabled: false; 
 				 				sourceType: webcam; 
-								patternRatio: 0.85; 
+								patternRatio: 0.5; 
+								detectionMode: mono_and_matrix;
+								matrixCodeType: 3x3;
 								trackingMethod: best;' 
 				 embedded
 				 gesture-detector>
