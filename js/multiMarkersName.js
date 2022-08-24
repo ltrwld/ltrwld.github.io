@@ -40,7 +40,7 @@ AFRAME.registerComponent('markers_start',{
 			var img = document.createElement('a-image');
 			
 			img.setAttribute('src','#' + markersNameArray[k]);
-			img.setAttribute('link','href: ' + link[k]);
+			img.setAttribute('link','href: ' + link+k);
 			img.setAttribute('id',markersNameArray[k]);
 			img.setAttribute('scale','1 1 1'); 
 			img.setAttribute('class','image clickable');
