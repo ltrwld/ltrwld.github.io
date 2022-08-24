@@ -9,10 +9,6 @@ AFRAME.registerComponent('markers_start',{
 		console.log('Add markers to the scene');
 
 		var sceneEl = document.querySelector('a-scene');
-
-		//links
-		var link1 = "https://github.com";
-		var link2 = "https://google.es";
 		
 		//list of the markers
 		for(var i=1; i<23; i++)
@@ -38,15 +34,14 @@ AFRAME.registerComponent('markers_start',{
 
 			//Adding text to each marker
 			var img = document.createElement('a-image');
-			var link = link + k;
 			
 			img.setAttribute('src','#' + markersNameArray[k]);
-			img.setAttribute('link','href: ' + link);
+			img.setAttribute('link','href: https://google.com/search?q=' + markersNameArray[k]);
 			img.setAttribute('id',markersNameArray[k]);
 			img.setAttribute('scale','1 1 1'); 
 			img.setAttribute('class','image clickable');
-			img.object3D.position.set(0, 0.5, 0);
-			img.object3D.rotation.set(-90, 0, 0);
+			img.object3D.position.set(0, 0.3, 0);
+			img.object3D.rotation.set(65, 0, 0);
 
 			markerEl.appendChild(img);
 		}
