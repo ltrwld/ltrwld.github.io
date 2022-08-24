@@ -6,8 +6,25 @@
 	<body>
         <script>
             const params = new URLSearchParams(window.location.search)
-            const link = params.get('test')
-            
+            const link = params.get('link')
+
+            const link1 = "https://jenabatteries.de"
+            const link2 = "https://www.youtube.com/watch?v=61W1gN3ETjQ"
+            const link3 = "https://github.com"
+            const link4 = "https://wikipedia.org"
+
+            if (link == 'Marker_1')
+            {window.location = link1;}
+
+            if (link == 'Marker_2')
+            {window.location = link2;}
+
+            if (link == 'Marker_3')
+            {window.location = link3;}
+
+            if (link == 'Marker_4')
+            {window.location = link4;}
+
             console.log(link)
           
         </script>
