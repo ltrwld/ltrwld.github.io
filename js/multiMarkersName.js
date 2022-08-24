@@ -11,7 +11,7 @@ AFRAME.registerComponent('markers_start',{
 		var sceneEl = document.querySelector('a-scene');
 		
 
-		for(var k=1; k<2; k++)
+		for(var k=0; k<1; k++)
 		{
 			var markerEl = document.createElement('a-marker');
 		
