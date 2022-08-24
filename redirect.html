@@ -6,10 +6,9 @@
 	<body>
         <script>
             const params = new URLSearchParams(window.location.search)
-
-            if (params.get('link') = 'Marker_1') {
-                alert('Marker One');
-            }
+            const link = params.get('test')
+            
+            console.log(link)
           
         </script>
     </body>
