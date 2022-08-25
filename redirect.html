@@ -39,10 +39,13 @@
             const link29 = "https://github.com"
             const link30 = "https://wikipedia.org"
 
-            for(var k=0; k<22; k++) 
+            for(var k=1; k<30; k++) 
             {
                 if (link == 'Marker_' + k)
-                {window.location = link + k;}
+                {
+                    const link = link + k
+                    window.location = link;
+                }
             }
             console.log(link)
           
