@@ -94,6 +94,12 @@ window.ARThreeOnLoad = function() {
 			arScene.scene.add(markerRoot);
 		});
 
+		arController.loadMarker('../../resources/markers/pattern-Individual_Blocks-1.patt', function(markerId) {
+			var markerRoot = arController.createThreeMarker(markerId);
+			markerRoot.add(torus);
+			arScene.scene.add(markerRoot);
+		});
+
 		var tick = function() {
 			arScene.process();
 
