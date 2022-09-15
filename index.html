@@ -52,23 +52,19 @@
     		</a-entity>
 		</a-scene>
 <script>
-		function onClick() {
-			if (typeof DeviceMotionEvent.requestPermission === 'function') {
-			  // Handle iOS 13+ devices.
-			  DeviceMotionEvent.requestPermission()
-				.then((state) => {
-				  if (state === 'granted') {
-					window.addEventListener('devicemotion', handleOrientation);
-				  } else {
-					console.error('Request to access the orientation was rejected');
-				  }
-				})
-				.catch(console.error);
-			} else {
-			  // Handle regular non iOS 13+ devices.
-			  window.addEventListener('devicemotion', handleOrientation);
-			}
-		  }
+		if (window.DeviceOrientationEvent) {
+   window.addEventListener("deviceorientation", (event) => {
+     const rotateDegrees = event.alpha; // alpha: rotation around z-axis
+     const leftToRight = event.gamma; // gamma: left to right
+     const frontToBack = event.beta; // beta: front back motion
+
+     handleOrientationEvent(frontToBack, leftToRight, rotateDegrees);
+   }, true);
+}
+
+const handleOrientationEvent = (frontToBack, leftToRight, rotateDegrees) => {
+  // do something amazing
+};
 		</script>
 	</body>
 </html>
