@@ -83,7 +83,7 @@ AFRAME.registerComponent('markers_start',{
 
 
 					// if device is 45 degree load ground (1-20)
-					while (x > 49) {
+					while (x < 49) {
 
 					const deleteall = document.getElementById('markersArray');
 					deleteall.remove();
@@ -123,7 +123,7 @@ AFRAME.registerComponent('markers_start',{
 
 
 					// if device is 45 degree load ground (1-20)
-					while (x < 49) {
+					while (x > 49) {
 
 					const deleteall = document.getElementById('markersArray');
 					deleteall.remove();
