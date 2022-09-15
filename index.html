@@ -31,6 +31,9 @@ border-radius: 100%;
 
 	<body style="width: 100vw !important;
 	height: 100vh !important; margin : 0px; overflow: hidden;">
+
+<iframe id="iframe1" style="display:none" src="targetwebsite1" width="350px" height="286px" frameborder="0">.</iframe>
+
 		<a-scene cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
 				 raycaster="objects: .clickable"
 				 markers_start
@@ -80,12 +83,7 @@ border-radius: 100%;
 
 
 		<script>
-			const ball   = document.querySelector('.ball');
-const garden = document.querySelector('.garden');
-const output = document.querySelector('.output');
-
-const maxX = garden.clientWidth  - ball.clientWidth;
-const maxY = garden.clientHeight - ball.clientHeight;
+			
 
 function handleOrientation(event) {
 let x = event.beta;  // In degree in the range [-180,180)
@@ -104,10 +102,9 @@ if (x < -90) { x = -90};
 x += 90;
 y += 90;
 
-// 10 is half the size of the ball
-// It center the positioning point to the center of the ball
-ball.style.top  = `${maxY * y / 180 - 10}px`;
-ball.style.left = `${maxX * x / 180 - 10}px`;
+if (x < 49) {
+    document.getElementById('iframe1').style.display = 'block';
+}
 }
 
 window.addEventListener('deviceorientation', handleOrientation);
