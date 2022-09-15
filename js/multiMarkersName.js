@@ -36,9 +36,7 @@ AFRAME.registerComponent('markers_start',{
 
 				var valk1=0;
 				var valk2=19;
-				// if device is 45 degree load ground (1-20)
-				const deleteall = document.getElementById('markersArray-ground');
-				deleteall.remove();
+				
 	
 
 			} else {
@@ -49,9 +47,6 @@ AFRAME.registerComponent('markers_start',{
 				var valk1=20;
 				var valk2=39;
 
-				// if device is 45 degree load ground (1-20)
-				const deleteall = document.getElementById('markersArray-wall');
-				deleteall.remove();
 			}
 				
 			if (x < 49) {
