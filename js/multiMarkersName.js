@@ -32,8 +32,8 @@ AFRAME.registerComponent('markers_start',{
 			if (x < 45) {
 
 			//remove all old marker and images
-			markerEl.remove();
-			img.remove();
+			const deleteall = document.getElementById('markersArray');
+			deleteall.remove();
 
 			//list of the markers
 			for(var i=1; i<23; i++) {
@@ -49,7 +49,7 @@ AFRAME.registerComponent('markers_start',{
 	
 				markerEl.setAttribute('type','pattern');
 				markerEl.setAttribute('url',markersURLArray[k]);
-				markerEl.setAttribute('id',markersNameArray[k]);
+				markerEl.setAttribute('id','markersArray');
 				markerEl.setAttribute('class','marker');
 		
 				markerEl.setAttribute('registerevents','');
@@ -60,7 +60,7 @@ AFRAME.registerComponent('markers_start',{
 		
 				img.setAttribute('src','#' + markersNameArray[k]);
 				img.setAttribute('link','href: https://ltrwld.github.io/redirect.html?link=' + markersNameArray[k]);
-				img.setAttribute('id',markersNameArray[k]);
+				img.setAttribute('id','markersArray');
 				img.setAttribute('scale','1 1 1'); 
 				img.setAttribute('class','image clickable');
 				img.object3D.position.set(0, 0.3, 0);
@@ -71,9 +71,11 @@ AFRAME.registerComponent('markers_start',{
 
 			// If device is over 45 degree load wall (21-50)
 			} else {
+				
 				//remove all old marker and images
-				markerEl.remove();
-				img.remove();
+				const deleteall = document.getElementById('markersArray');
+				deleteall.remove();
+
 				//list of the markers
 				for(var i=24; i<50; i++) {
 					var url="resources/markers/pattern-Individual_Blocks-"+i+".patt";
@@ -88,7 +90,7 @@ AFRAME.registerComponent('markers_start',{
 	
 					markerEl.setAttribute('type','pattern');
 					markerEl.setAttribute('url',markersURLArray[k]);
-					markerEl.setAttribute('id',markersNameArray[k]);
+					markerEl.setAttribute('id','markersArray');
 					markerEl.setAttribute('class','marker');
 		
 					markerEl.setAttribute('registerevents','');
@@ -99,7 +101,7 @@ AFRAME.registerComponent('markers_start',{
 		
 					img.setAttribute('src','#' + markersNameArray[k]);
 					img.setAttribute('link','href: https://ltrwld.github.io/redirect.html?link=' + markersNameArray[k]);
-					img.setAttribute('id',markersNameArray[k]);
+					img.setAttribute('id','markersArray');
 					img.setAttribute('scale','1 1 1'); 
 					img.setAttribute('class','image clickable');
 					img.object3D.position.set(0, 0.3, 0);
