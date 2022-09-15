@@ -29,9 +29,9 @@ AFRAME.registerComponent('markers_start',{
 			y += 90;
 
 			// if device is 45 degree load ground (1-20)
-			if (x < 45) {
+			if (x > 45) {
 
-			
+			console.log('#### LOAD GROUNDL');
 
 			//list of the markers
 			for(var i=1; i<23; i++) {
@@ -70,7 +70,7 @@ AFRAME.registerComponent('markers_start',{
 			// If device is over 45 degree load wall (21-50)
 			} else {
 				
-				
+				console.log('#### LOAD WALL');
 
 				//list of the markers
 				for(var i=24; i<50; i++) {
