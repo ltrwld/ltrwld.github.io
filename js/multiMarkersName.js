@@ -29,8 +29,8 @@ AFRAME.registerComponent('markers_start',{
 			// y += 90;
 
 			// if device is 45 degree load ground (1-20)
-			if (x > 45) {
-				let node = document.getElementById("aframe-scene");
+			if (x > 49) {
+				let node = document.getElementById("a-scene");
 				if (node.parentNode) {
   					node.parentNode.removeChild(node);
 				}
