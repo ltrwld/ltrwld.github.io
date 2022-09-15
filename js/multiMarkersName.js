@@ -30,6 +30,9 @@ AFRAME.registerComponent('markers_start',{
 
 			// if device is 45 degree load ground (1-20)
 			if (x > 45) {
+				
+				removeChild(sceneEl)
+
 				var vali1=1;
 				var vali2=23;
 
@@ -68,6 +71,7 @@ AFRAME.registerComponent('markers_start',{
 					markerEl.appendChild(img);
 				}
 			}
+			
 			}
 
 			console.log('#### LOAD GROUNDL');
