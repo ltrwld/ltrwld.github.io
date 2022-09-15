@@ -28,8 +28,8 @@ AFRAME.registerComponent('markers_start',{
 			x += 90;
 			y += 90;
 
-			// if device is 45 degree load ground (1-20)
-			if (x > 45) {
+			// while device is 45 degree load ground (1-20)
+			while (x > 45) {
 
 			console.log('#### LOAD GROUNDL');
 
@@ -68,43 +68,6 @@ AFRAME.registerComponent('markers_start',{
 			}
 
 			// If device is over 45 degree load wall (21-50)
-			} else {
-				
-				console.log('#### LOAD WALL');
-
-				//list of the markers
-				for(var i=24; i<50; i++) {
-					var url="resources/markers/pattern-Individual_Blocks-"+i+".patt";
-					markersURLArray.push(url);
-					markersNameArray.push('Marker_'+i);
-					console.log(url);
-				}
-
-				for(var k=23; k<50; k++) {
-					var markerEl = document.createElement('a-marker');
-					const number = k;
-	
-					markerEl.setAttribute('type','pattern');
-					markerEl.setAttribute('url',markersURLArray[k]);
-					markerEl.setAttribute('id','markersArray');
-					markerEl.setAttribute('class','marker');
-		
-					markerEl.setAttribute('registerevents','');
-					sceneEl.appendChild(markerEl);
-
-					//Adding img to each marker
-					var img = document.createElement('a-image');
-		
-					img.setAttribute('src','#' + markersNameArray[k]);
-					img.setAttribute('link','href: https://ltrwld.github.io/redirect.html?link=' + markersNameArray[k]);
-					img.setAttribute('id','markersArray');
-					img.setAttribute('scale','1 1 1'); 
-					img.setAttribute('class','image clickable');
-					img.object3D.position.set(0, 0.3, 0);
-					img.object3D.rotation.set(65, 0, 0);
-
-					markerEl.appendChild(img);
-				}
 			}
 		}
 
