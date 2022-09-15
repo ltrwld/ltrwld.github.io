@@ -30,8 +30,8 @@ AFRAME.registerComponent('markers_start',{
 
 			// if device is 45 degree load ground (1-20)
 			while (x > 49) {
-				const element = document.getElementById('markersArray');
-				element.remove(); // Removes the elements with the 'markersArray' id
+				const removeElement = document.getElementById('markersArray');
+				//removeElement.remove(); // Removes the elements with the 'markersArray' id
 
 				var vali1=1;
 				var vali2=23;
