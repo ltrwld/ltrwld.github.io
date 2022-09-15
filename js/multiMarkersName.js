@@ -30,18 +30,21 @@ AFRAME.registerComponent('markers_start',{
 
 			// while device is 45 degree load ground (1-20)
 			while (x > 45) {
+				var vali1=1;
+				var vali2=23;
+			}
 
 			console.log('#### LOAD GROUNDL');
 
 			//list of the markers
-			for(var i=1; i<23; i++) {
+			for(var i=vali1; i<vali2; i++) {
 				var url="resources/markers/pattern-Individual_Blocks-"+i+".patt";
 				markersURLArray.push(url);
 				markersNameArray.push('Marker_'+i);
 				console.log(url);
 			}
 
-			for(var k=0; k<22; k++) {
+			for(var k=vali1-1; k<vali2-1; k++) {
 				var markerEl = document.createElement('a-marker');
 				const number = k;
 	
@@ -66,23 +69,9 @@ AFRAME.registerComponent('markers_start',{
 
 				markerEl.appendChild(img);
 			}
-
-			// If device is over 45 degree load wall (21-50)
-			}
 		}
 
-window.addEventListener('deviceorientation', handleOrientation);
-
-
-
-
-
-
-
-
-
-
-		
+		window.addEventListener('deviceorientation', handleOrientation);
 		
 	}
 });
