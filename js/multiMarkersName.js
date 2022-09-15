@@ -43,9 +43,8 @@ AFRAME.registerComponent('markers_start',{
 				markersNameArray.push('Marker_'+i);
 				console.log(url);
 
-				for(var k=valk1; k<valk1; k++) {
+				for(var k=valk1; k<valk2; k++) {
 					var markerEl = document.createElement('a-marker');
-					const number = k;
 		
 					markerEl.setAttribute('type','pattern');
 					markerEl.setAttribute('url',markersURLArray[k]);
