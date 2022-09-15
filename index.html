@@ -24,7 +24,8 @@
 	left: 0;
 	position: absolute;"></object>
 
-		<a-scene cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
+		<a-scene id="a-scene"
+				 cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
 				 raycaster="objects: .clickable"
 				 markers_start
 				 vr-mode-ui="enabled: false" 
@@ -56,8 +57,10 @@
 	
 				if (x < 49) {
 					document.getElementById('iframe1').style.display = 'block';
+					document.getElementById('a-scene').style.display = 'none';
 				} else {
 					document.getElementById('iframe1').style.display = 'none';
+					document.getElementById('a-scene').style.display = 'block';
 				}
 			}
 			window.addEventListener('deviceorientation', handleOrientation);
