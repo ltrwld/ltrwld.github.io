@@ -39,8 +39,8 @@ AFRAME.registerComponent('markers_start',{
 
 			} else {
 
-				var vali1=21;
-				var vali2=40;
+				var vali1=1;
+				var vali2=99;
 
 				var valk1=20;
 				var valk2=39;
@@ -54,7 +54,7 @@ AFRAME.registerComponent('markers_start',{
 				markersNameArray.push('Marker_'+i);
 				console.log(url); }
 
-				if (x < 49) {
+				
 
 				for(var k=valk1; k<valk2; k++) {
 					var markerEl = document.createElement('a-marker');
@@ -83,7 +83,7 @@ AFRAME.registerComponent('markers_start',{
 
 
 					// if device is 45 degree load ground (1-20)
-					while (x < 49) {
+					if (x < 49) {
 
 					const deleteall = document.getElementById('markersArray');
 					deleteall.remove();
@@ -91,54 +91,7 @@ AFRAME.registerComponent('markers_start',{
 					}
 
 				}
-			}
-
-
-			if (x > 49) {
-
-				for(var k=valk1; k<valk2; k++) {
-					var markerEl = document.createElement('a-marker');
-		
-					markerEl.setAttribute('type','pattern');
-					markerEl.setAttribute('url',markersURLArray[k]);
-					markerEl.setAttribute('id','markersArray');
-					markerEl.setAttribute('class','marker');
 			
-					markerEl.setAttribute('registerevents','');
-					sceneEl.appendChild(markerEl);
-	
-					//Adding img to each marker
-					var img = document.createElement('a-image');
-			
-					img.setAttribute('src','#' + markersNameArray[k]);
-					img.setAttribute('link','href: https://ltrwld.github.io/redirect.html?link=' + markersNameArray[k]);
-					img.setAttribute('id','markersArray');
-					img.setAttribute('scale','1 1 1'); 
-					img.setAttribute('class','image clickable');
-					img.object3D.position.set(0, 0.3, 0);
-					img.object3D.rotation.set(65, 0, 0);
-	
-					markerEl.appendChild(img);
-
-
-
-					// if device is 45 degree load ground (1-20)
-					while (x > 49) {
-
-					const deleteall = document.getElementById('markersArray');
-					deleteall.remove();
-	
-					}
-
-				}
-			}
-
-
-
-
-
-
-
 
 				
 			
