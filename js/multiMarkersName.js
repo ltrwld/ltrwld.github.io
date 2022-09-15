@@ -28,8 +28,8 @@ AFRAME.registerComponent('markers_start',{
 			x += 90;
 			y += 90;
 
-			// while device is 45 degree load ground (1-20)
-			while (x > 45) {
+			// if device is 45 degree load ground (1-20)
+			if (x > 45) {
 				var vali1=1;
 				var vali2=23;
 
