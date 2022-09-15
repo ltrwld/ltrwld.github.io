@@ -32,19 +32,21 @@ AFRAME.registerComponent('markers_start',{
 			while (x > 45) {
 				var vali1=1;
 				var vali2=23;
-			}
 
-			console.log('#### LOAD GROUNDL');
-
-			//list of the markers
-			for(var i=vali1; i<vali2; i++) {
+				//list of the markers
+				for(var i=vali1; i<vali2; i++) {
 				var url="resources/markers/pattern-Individual_Blocks-"+i+".patt";
 				markersURLArray.push(url);
 				markersNameArray.push('Marker_'+i);
 				console.log(url);
 			}
+			}
 
-			for(var k=vali1-1; k<vali2-1; k++) {
+			console.log('#### LOAD GROUNDL');
+
+			
+
+			for(var k=0; k<90; k++) {
 				var markerEl = document.createElement('a-marker');
 				const number = k;
 	
