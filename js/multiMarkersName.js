@@ -28,11 +28,24 @@ AFRAME.registerComponent('markers_start',{
 			// x += 90;
 			// y += 90;
 
+			// if device is 45 degree load ground (1-20)
+			if (x < 49) {
+
 				var vali1=1;
-				var vali2=23;
+				var vali2=20;
 
 				var valk1=0;
-				var valk2=22;
+				var valk2=19;
+
+			} else {
+
+				var vali1=21;
+				var vali2=40;
+
+				var valk1=20;
+				var valk2=39;
+			}
+				
 
 				//list of the markers
 				for(var i=vali1; i<vali2; i++) {
@@ -64,15 +77,20 @@ AFRAME.registerComponent('markers_start',{
 					img.object3D.rotation.set(65, 0, 0);
 	
 					markerEl.appendChild(img);
+
+
+
+					// if device is 45 degree load ground (1-20)
+					while (x < 49) {
+
+					const deleteall = document.getElementById('markersArray');
+					deleteall.remove();
+	
+					}
+
 				}
 
-				// if device is 45 degree load ground (1-20)
-				while (x < 49) {
-
-				const deleteall = document.getElementById('markersArray');
-				deleteall.remove();
-
-				}
+				
 			
 			
 
