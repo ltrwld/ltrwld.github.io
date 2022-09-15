@@ -28,12 +28,6 @@ AFRAME.registerComponent('markers_start',{
 			// x += 90;
 			// y += 90;
 
-			// if device is 45 degree load ground (1-20)
-			while (x > 49) {
-
-				const deleteall = document.getElementById('markersArray');
-				deleteall.remove();
-				
 				var vali1=1;
 				var vali2=23;
 
@@ -45,7 +39,7 @@ AFRAME.registerComponent('markers_start',{
 				var url="resources/markers/pattern-Individual_Blocks-"+i+".patt";
 				markersURLArray.push(url);
 				markersNameArray.push('Marker_'+i);
-				console.log(url);
+				console.log(url); }
 
 				for(var k=valk1; k<valk2; k++) {
 					var markerEl = document.createElement('a-marker');
@@ -71,9 +65,16 @@ AFRAME.registerComponent('markers_start',{
 	
 					markerEl.appendChild(img);
 				}
-			}
+
+				// if device is 45 degree load ground (1-20)
+				while (x < 49) {
+
+				const deleteall = document.getElementById('markersArray');
+				deleteall.remove();
+
+				}
 			
-			}
+			
 
 			console.log('#### LOAD GROUNDL');
 		}
