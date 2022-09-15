@@ -65,3 +65,14 @@ AFRAME.registerComponent('registerevents', {
 			});
 		},
 	});
+
+//IF GROUND DISPLAY IFRAME
+function handleOrientation(event) {
+	let x = event.beta;  // In degree in the range [-180,180)
+	let y = event.gamma; // In degree in the range [-90,90)
+	
+	if (x < 49) {
+		document.getElementById('iframe1').style.display = 'block';
+	}
+}
+window.addEventListener('deviceorientation', handleOrientation);
