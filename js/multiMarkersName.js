@@ -39,6 +39,10 @@ AFRAME.registerComponent('markers_start',{
 			img.setAttribute('link','href: https://ltrwld.github.io/redirect.html?link=' + markersNameArray[k]);
 			img.setAttribute('id',markersNameArray[k]);
 			img.setAttribute('scale','5 5 5'); 
+			img.setAttribute('smooth','true');
+			img.setAttribute('smoothCount','10');
+			img.setAttribute('smoothTolerance','.01');
+			img.setAttribute('smoothThreshold','5');
 			img.setAttribute('class','image clickable');
 			img.object3D.position.set(0, 0.3, 0);
 			img.object3D.rotation.set(180, 0, 0);
