@@ -3,6 +3,18 @@
 //Global Variable
 var markersURLArray=[];
 var markersNameArray=[];
+const link19 = "href: https://www.cash-online.de/investmentfonds/nachhaltigkeit-investmentfonds/2022/energiewende-kohlschwarze-aussichten-fuer-die-zukunft/616776/"
+            const link20 = "https://wikipedia.org"
+            const link21 = "https://jenabatteries.de"
+            const link22 = "https://www.youtube.com/watch?v=61W1gN3ETjQ"
+            const link23 = "https://github.com"
+            const link24 = "https://wikipedia.org"
+            const link25 = "https://jenabatteries.de"
+            const link26 = "https://www.youtube.com/watch?v=61W1gN3ETjQ"
+            const link27 = "https://github.com"
+            const link28 = "https://wikipedia.org"
+            const link29 = "https://github.com"
+            const link30 = "https://wikipedia.org"
 
 AFRAME.registerComponent('markers_start',{
 	init:function(){
@@ -36,7 +48,7 @@ AFRAME.registerComponent('markers_start',{
 			var img = document.createElement('a-image');
 			
 			img.setAttribute('src','#' + markersNameArray[k]);
-			img.setAttribute('link','href: https://ltrwld.github.io/redirect.html?link=' + markersNameArray[k]);
+			img.setAttribute('link', link+k);
 			img.setAttribute('id',markersNameArray[k]);
 			img.setAttribute('scale','1 1 1'); 
 			img.setAttribute('class','image clickable');
