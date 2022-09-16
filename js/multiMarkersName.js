@@ -41,7 +41,7 @@ AFRAME.registerComponent('markers_start',{
 			img.setAttribute('scale','4 4 4'); 
 			img.setAttribute('class','image clickable');
 			img.object3D.position.set(0, 0.3, 0);
-			img.object3D.rotation.set(280, 0, 0);
+			img.object3D.rotation.set(290, 0, 0);
 
 			markerEl.appendChild(img);
 		}
