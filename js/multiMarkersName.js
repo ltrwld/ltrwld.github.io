@@ -36,7 +36,7 @@ AFRAME.registerComponent('markers_start',{
 			var img = document.createElement('a-image');
 			
 			img.setAttribute('src','#' + markersNameArray[k]);
-			img.setAttribute('link','href: https://ltrwld.github.io/redirect.html?link=' + markersNameArray[k]);
+			img.setAttribute('link','href: https://ar.cerq.com/redirect.html?link=' + markersNameArray[k]);
 			img.setAttribute('id',markersNameArray[k]);
 			img.setAttribute('scale','4 4 4'); 
 			img.setAttribute('class','image clickable');
