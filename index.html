@@ -12,48 +12,23 @@
 	height: 100vh !important; margin : 0px; overflow: hidden;">
 
 <style>
-.hd-cerq-header-nav-wrapper-main {
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    width: 100%;
-    z-index: 999;
-}
-.container-fluid {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    width: 100%;
-}
-.hd-cerq-header-nav-wrapper-main .hd-cerq-nav-top-gradient {
-    align-items: center;
+
+
+.top-gradient {
     display: flex;
-    height: 9px;
-    justify-content: center;
-    position: relative;
-    width: 100%;
 }
-.hd-cerq-header-nav-wrapper-main .hd-cerq-nav-top-gradient:after {
+.top-gradient:after {
     background: #9643e5;
     background: linear-gradient(90deg,#9643e5 40%,#ffdc00 62%);
     content: "";
     height: 9px;
-    max-width: 100%;
-    position: relative;
     width: 100%;
 }
 </style>
 <!--HEADER-->
-<header class="hd-cerq-header-nav-wrapper-main">
-	<div class="container-fluid p-0">
-	  <div class="row-fluid p-0">
-		<div class="col-12 p-0">
-		  <div class="hd-cerq-nav-top-gradient"></div>
-		</div>
-	  </div>
-	</div>
-  </header>
+<div class="top-gradient"></div>
+
+
 		
 
 		<a-scene cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
