@@ -44,27 +44,11 @@
             const link29 = "https://github.com"
             const link30 = "https://wikipedia.org"
 
-            if (link == 'Marker_1')
-            {window.open(link1, '_blank');}
-
-            if (link == 'Marker_2')
-            {window.open(link2, '_blank');}
-
-            if (link == 'Marker_3')
-            {window.open(link3, '_blank');}
-
-            if (link == 'Marker_4')
-            {window.open(link4, '_blank');}
-
-            if (link == 'Marker_5')
-            {window.open(link5, '_blank');}
-
-            if (link == 'Marker_6')
-            {window.open(link6, '_blank');}
-
-            if (link == 'Marker_19')
-            {window.open(link19, '_blank');}
-
+            for(var i=0; i<20; i++)
+            {
+                if (link == 'Marker_'+i)
+                {window.open('link'+i, '_blank');}
+            }
             console.log(link)
           
         </script>
