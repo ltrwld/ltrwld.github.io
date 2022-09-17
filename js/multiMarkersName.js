@@ -19,7 +19,7 @@ AFRAME.registerComponent('markers_start',{
 			//console.log(url);
 		}
 
-		for(var k=0; k<22; k++)
+		for(var k=0; k<18; k++)
 		{
 			var markerEl = document.createElement('a-marker');
 			const number = k;
@@ -44,6 +44,32 @@ AFRAME.registerComponent('markers_start',{
 			img.object3D.rotation.set(250, 0, 0);
 
 			markerEl.appendChild(img);
+		}
+		for(var k=17; k<19; k++)
+		{
+			var markerEl = document.createElement('a-marker');
+			const number = k;
+		
+			markerEl.setAttribute('type','pattern');
+			markerEl.setAttribute('url',markersURLArray[k]);
+			markerEl.setAttribute('id',markersNameArray[k]);
+			markerEl.setAttribute('class','marker');
+			
+			markerEl.setAttribute('registerevents','');
+			sceneEl.appendChild(markerEl);
+
+			//Adding text to each marker
+			var img = document.createElement('a-video');
+			
+			img.setAttribute('src','#' + markersNameArray[k]);
+			img.setAttribute('link','href: https://ar.cerq.com/redirect.html?link=' + markersNameArray[k]);
+			img.setAttribute('id',markersNameArray[k]);
+			img.setAttribute('scale','4 4 1'); 
+			img.setAttribute('class','image clickable');
+			img.object3D.position.set(0, 0.3, 0);
+			img.object3D.rotation.set(250, 0, 0);
+
+			markerEl.appendChild(video);
 		}
 	}
 });
