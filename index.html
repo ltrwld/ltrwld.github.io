@@ -13,10 +13,6 @@
 	height: 100vh !important; margin : 0px; overflow: hidden;">
 
 <style>
-.a-loader-title {
-  display: none;
-}
-
 .top-gradient {
     display: flex;
 	position: sticky;
@@ -29,14 +25,122 @@
     height: 9px;
     width: 100%;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/*LOADING ANIMATION*/
+:root {
+  --base_scale: 5vh;
+  --floor: 15vh;
+  --color: #836ee5;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100vh;
+}
+
+body {
+  background: #eee;
+  min-height: 100vh;
+  padding-bottom: var(--floor);
+  border-bottom: var(--floor) solid #fff;
+  overflow-y: hidden;
+}
+
+shape {
+  position: absolute;
+  display: block;
+  left: 50%;
+  bottom: 0;
+  margin-left: calc(-1 * (var(--base_scale) / 2));
+  margin-bottom: var(--floor);
+}
+shape.circle {
+  width: var(--base_scale);
+  height: var(--base_scale);
+  background: var(--color);
+  border-radius: 50%;
+}
+shape.semi-circle {
+  height: calc(var(--base_scale) * 2);
+  width: var(--base_scale);
+  background: var(--color);
+  border-bottom-right-radius: calc(var(--base_scale) * 2);
+  border-top-right-radius: calc(var(--base_scale) * 2);
+}
+shape.square {
+  width: var(--base_scale);
+  height: var(--base_scale);
+  background: var(--color);
+}
+shape.rectangle {
+  width: calc(var(--base_scale) * 1.5);
+  height: var(--base_scale);
+  background: var(--color);
+}
+shape.triangle {
+  width: 0;
+  height: 0;
+  border-bottom: var(--base_scale) solid var(--color);
+  border-right: var(--base_scale) solid transparent;
+}
+shape.triangle-2 {
+  width: 0;
+  height: 0;
+  border-top: var(--base_scale) solid var(--color);
+  border-left: var(--base_scale) solid transparent;
+}
+shape.bounce-up {
+  --bounce-variance: 0vh;
+  --bounce-height: calc(
+    -1 * 50vh - calc(var(--base_scale) - var(--floor) + var(--bounce-variance))
+  );
+  transition: transform 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform: translateY(var(--bounce-height)) rotate(0deg);
+}
+shape.bounce-down {
+  transition: transform 300ms cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  transform: translateY(0) rotate(var(--rotation));
+}
+
+a {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  color: rgba(0, 0, 0, 0.3);
+  z-index: 12;
+  font-size: 0.9em;
+}
 </style>
+
+<div id="loader">
+	<shape></shape><shape></shape><shape></shape><a href="https://dribbble.com/shots/4037784-Geometric-shapes-loading-animation" target="_blank">original artwork by Samuel Medvedowsky</a>
+</div>
+
 <!--HEADER-->
 <div class="top-gradient"></div>
 
 
 		
 
-		<a-scene loading-screen="dotsColor: #ffed00; backgroundColor: #8a2fff"
+		<a-scene loading-screen="enabled: false;"
 				 cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
 				 raycaster="objects: .clickable"
 				 markers_start
@@ -79,6 +183,59 @@
 				
     		</a-entity>
 		</a-scene>
+
+
+		<!--LOADING SCRIPT-->
+		<script>
+		const doc = document,
+types = ['circle', 'semi-circle', 'square', 'triangle', 'triangle-2', 'rectangle'],
+colors = ['#836ee5','#fe94b4','#49d2f5','#ff5354','#00b1b4','#ffe465','#0071ff','#03274b'];
+
+let shapes = doc.querySelectorAll('shape');
+
+shapes.forEach((shape, index) => {
+  setInterval(() => {
+    let cl = shape.classList;
+    shape.className = '';
+
+    //assign styles
+    cl.add(types[~~(Math.random()*types.length)]);
+    let offset = ((Math.random()*4))-2;
+    let opp = offset >= 0 ? '+ ': '- ';
+    let styles = [
+      ['left', 'calc(50% '+opp+offset+'vw)'],
+      ['--bounce-variance', ((Math.random()*20))-10 + 'vh'],
+      ['--base_scale', ((Math.random()*6))+4 + 'vh'],
+      ['--rotation', ((Math.random()*180))-90 + 'deg'],
+      ['--color', colors[~~(Math.random()*colors.length)]]
+    ];
+    styles.forEach(style => shape.style.setProperty(style[0], style[1]))
+    
+    //animate
+    if(!cl.contains('bounce-up')) cl.add('bounce-up');
+    cl.replace('bounce-down', 'bounce-up');
+    setTimeout(() => cl.replace('bounce-up', 'bounce-down'), 400)
+  
+  },740)
+})
+
+
+</script>
+		<script>
+			document.onreadystatechange = function() {
+				if (document.readyState !== "complete") {
+					document.querySelector(
+					  "body").style.visibility = "hidden";
+					document.querySelector(
+					  "#loader").style.visibility = "visible";
+				} else {
+					document.querySelector(
+					  "#loader").style.display = "none";
+					document.querySelector(
+					  "body").style.visibility = "visible";
+				}
+			};
+		</script>
 
 
 
