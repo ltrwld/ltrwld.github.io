@@ -2,6 +2,8 @@
 <html>
   <head>
     <title></title>
+    <meta name="description" content="AR Wall - CERQ">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
 	</head>
     <style>
         @font-face {
@@ -114,24 +116,24 @@ body .cybr-btn + .cybr-btn {
 
             // GROUND
 
-             const link1 = "https://background.tagesspiegel.de/energie-klima/industrie-warnt-vor-insolvenzen-wegen-gas-umlage"
-             const link2 = "https://background.tagesspiegel.de/energie-klima/schaeden-von-72-milliarden-dollar-durch-flut-und-sturm"
-             const link3 = "https://www-freethink-com.cdn.ampproject.org/c/s/www.freethink.com/environment/lithium-sulfur-battery"
-             const link4 = "https://www.zeit.de/wirtschaft/2022-07/energiewende-fossile-brennstoffe-erneuerbare-energien-energiepolitik"
-             const link5 = "https://www.euronews.com/green/2022/02/01/south-america-s-lithium-fields-reveal-the-dark-side-of-our-electric-future"
-             const link6 = "https://www.welt.de/debatte/kommentare/plus240301745/Deutschland-sitzt-in-der-Energiewende-Falle.html"
-             const link7 = "#"
-             const link8 = "https://wikipedia.org"
-             const link9 = "https://jenabatteries.de"
-            const link10 = "https://www.youtube.com/watch?v=61W1gN3ETjQ"
-            const link11 = "https://github.com"
-            const link12 = "https://wikipedia.org"
-            const link13 = "https://jenabatteries.de"
-            const link14 = "https://www.youtube.com/watch?v=61W1gN3ETjQ"
-            const link15 = "https://github.com"
-            const link16 = "https://wikipedia.org"
-            const link17 = "https://jenabatteries.de"
-            const link18 = "https://www.abendblatt.de/wirtschaft/article235936009/windindustrie-krise-energiewende-scheitern-oekostrom.html"
+             const linkNr1 = "https://background.tagesspiegel.de/energie-klima/industrie-warnt-vor-insolvenzen-wegen-gas-umlage"
+             const linkNr2 = "https://background.tagesspiegel.de/energie-klima/schaeden-von-72-milliarden-dollar-durch-flut-und-sturm"
+             const linkNr3 = "https://www-freethink-com.cdn.ampproject.org/c/s/www.freethink.com/environment/lithium-sulfur-battery"
+             const linkNr4 = "https://www.zeit.de/wirtschaft/2022-07/energiewende-fossile-brennstoffe-erneuerbare-energien-energiepolitik"
+             const linkNr5 = "https://www.euronews.com/green/2022/02/01/south-america-s-lithium-fields-reveal-the-dark-side-of-our-electric-future"
+             const linkNr6 = "https://www.welt.de/debatte/kommentare/plus240301745/Deutschland-sitzt-in-der-Energiewende-Falle.html"
+             const linkNr7 = "#"
+             const linkNr8 = "https://wikipedia.org"
+             const linkNr9 = "https://jenabatteries.de"
+            const linkNr10 = "https://www.youtube.com/watch?v=61W1gN3ETjQ"
+            const linkNr11 = "https://github.com"
+            const linkNr12 = "https://wikipedia.org"
+            const linkNr13 = "https://jenabatteries.de"
+            const linkNr14 = "https://www.youtube.com/watch?v=61W1gN3ETjQ"
+            const linkNr15 = "https://github.com"
+            const linkNr16 = "https://wikipedia.org"
+            const linkNr17 = "https://jenabatteries.de"
+            const linkNr18 = "https://www.abendblatt.de/wirtschaft/article235936009/windindustrie-krise-energiewende-scheitern-oekostrom.html"
 
             // WALL
 
@@ -148,10 +150,11 @@ body .cybr-btn + .cybr-btn {
             const link29 = "https://github.com"
             const link30 = "https://wikipedia.org"
 
-            for(var i=0; i<20; i++)
-            {
+            var linkNr = [];
+            for (var i = 1; i <= 30; ++i) {
+                linkNr = linkNr[i];
                 if (link == 'Marker_'+i)
-                {window.open(link + i, '_blank');}
+                {window.open(linkNr, '_blank');}
             }
             console.log(link)
           
