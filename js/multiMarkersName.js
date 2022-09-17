@@ -45,14 +45,14 @@ AFRAME.registerComponent('markers_start',{
 
 			markerEl.appendChild(img);
 		}
-		for(var k=17; k<19; k++)
+		for(var k=18; k<20; k++)
 		{
 			var markerEl = document.createElement('a-marker');
 			const number = k;
 		
 			markerEl.setAttribute('type','pattern');
 			markerEl.setAttribute('url',markersURLArray[k]);
-			markerEl.setAttribute('id',markersNameArray[k]);
+			markerEl.setAttribute('id',markersNameArray[k] + ' video');
 			markerEl.setAttribute('class','marker');
 			
 			markerEl.setAttribute('registerevents','');
@@ -68,7 +68,6 @@ AFRAME.registerComponent('markers_start',{
 			img.setAttribute('class','image clickable');
 			img.object3D.position.set(0, 0.3, 0);
 			img.object3D.rotation.set(250, 0, 0);
-			markerEl.appendChild(video);
 		}
 	}
 });
