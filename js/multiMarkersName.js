@@ -33,13 +33,18 @@ AFRAME.registerComponent('markers_start',{
 			//Adding text to each marker
 			var img = document.createElement('a-image');
 			
-			img.setAttribute('scale','4 4 1'); 
-			img.setAttribute('class','image clickable');
-			img.object3D.position.set(0, 0.3, 0);
-			img.object3D.rotation.set(250, 0, 0);
 			img.setAttribute('src','#' + markersNameArray[k]);
 			img.setAttribute('link','href: https://ar.cerq.com/redirect.html?link=' + markersNameArray[k]);
 			img.setAttribute('id',markersNameArray[k]);
+			img.setAttribute('scale','4 4 4'); 
+			img.setAttribute('class','image clickable');
+			img.setAttribute('width','16');
+			img.setAttribute('height','9');
+			img.object3D.position.set(0, 0, -20);
+			img.setAttribute('smooth','true');
+			img.setAttribute('smoothCount','10');
+			img.setAttribute('smoothTolerance','.01');
+			img.setAttribute('smoothThreshold','5');
 
 			markerEl.appendChild(img);
 		}
@@ -65,6 +70,10 @@ AFRAME.registerComponent('markers_start',{
 			video.setAttribute('width','16');
 			video.setAttribute('height','9');
 			video.object3D.position.set(0, 0, -20);
+			video.setAttribute('smooth','true');
+			video.setAttribute('smoothCount','10');
+			video.setAttribute('smoothTolerance','.01');
+			video.setAttribute('smoothThreshold','5');
 
 			markerEl.appendChild(video);
 		}	
