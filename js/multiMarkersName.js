@@ -36,9 +36,9 @@ AFRAME.registerComponent('markers_start',{
 			img.setAttribute('src','#' + markersNameArray[k]);
 			img.setAttribute('link','href: https://ar.cerq.com/redirect.html?link=' + markersNameArray[k]);
 			img.setAttribute('id',markersNameArray[k]);
-			img.object3D.scale.set(4, 4, 0);
+			img.setAttribute('scale','4 4 1');
 			img.object3D.position.set(0, 0, 0.2);
-			img.object3D.rotation.set(250, 0, 0);
+			img.object3D.rotation.set(-80, 0, 0);
 			img.setAttribute('class','image clickable');
 			img.setAttribute('smooth','true');
 			img.setAttribute('smoothCount','10');
