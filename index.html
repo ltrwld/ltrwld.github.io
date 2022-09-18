@@ -119,9 +119,9 @@ a {
 <div class="top-gradient"></div>
 
 
-<iframe id="ground" src="ground.html"></iframe>
+<iframe id="ground" src="ground.html" style="display: none;"></iframe>
 
-		<a-scene id="wall" loading-screen="enabled: false;"
+		<a-scene id="wall" loading-screen="enabled: false;" style="display: block;"
 				 cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
 				 raycaster="objects: .clickable"
 				 markers_start
@@ -263,14 +263,14 @@ shapes.forEach((shape, index) => {
 
         if (beta < 49) {
           document.querySelector(
-					  "#wall").style.visibility = "hidden";
-					document.querySelector(
-					  "#ground").style.visibility = "visible";
+					  "#wall").style.display = "none";
+					ddocument.querySelector(
+					  "#ground").style.display = "block";
 				} else {
 					document.querySelector(
 					  "#ground").style.display = "none";
-					document.querySelector(
-					  "#wall").style.visibility = "visible";
+            document.querySelector(
+					  "#wall").style.display = "block";
 				}
 }
 		</script>
