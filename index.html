@@ -128,7 +128,7 @@ a {
 <div class="top-gradient"></div>
 
 
-<iframe id="ground" src="ground.html" style="display: none;"></iframe>
+<iframe id="ground" src="ground.html"></iframe>
 
 		<a-scene id="wall" loading-screen="enabled: false;" style="display: block;"
 				 cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
@@ -273,7 +273,7 @@ shapes.forEach((shape, index) => {
         if (beta < 49) {
           document.querySelector(
 					  "#wall").style.display = "none";
-					ddocument.querySelector(
+					document.querySelector(
 					  "#ground").style.display = "block";
 				} else {
 					document.querySelector(
