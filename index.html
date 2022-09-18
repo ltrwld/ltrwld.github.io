@@ -119,9 +119,9 @@ a {
 <div class="top-gradient"></div>
 
 
-		
+<iframe id="ground" src="ground.html"></iframe>
 
-		<a-scene loading-screen="enabled: false;"
+		<a-scene id="wall" loading-screen="enabled: false;"
 				 cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
 				 raycaster="objects: .clickable"
 				 markers_start
@@ -158,6 +158,42 @@ a {
 				<img id="Marker_21" src="https://picsum.photos/200">
 				<img id="Marker_22" src="https://picsum.photos/200">
 				<img id="Marker_23" src="https://picsum.photos/800/400">
+        <img id="Marker_24" src="https://picsum.photos/200">
+				<img id="Marker_25" src="https://picsum.photos/700">
+				<img id="Marker_26" src="https://picsum.photos/200">
+				<img id="Marker_27" src="https://picsum.photos/200">
+				<img id="Marker_28" src="https://picsum.photos/800/400">
+        <img id="Marker_29" src="https://picsum.photos/200">
+				<img id="Marker_30" src="https://picsum.photos/700">
+				<img id="Marker_31" src="https://picsum.photos/200">
+				<img id="Marker_32" src="https://picsum.photos/200">
+				<img id="Marker_33" src="https://picsum.photos/800/400">
+        <img id="Marker_34" src="https://picsum.photos/200">
+				<img id="Marker_35" src="https://picsum.photos/700">
+				<img id="Marker_36" src="https://picsum.photos/200">
+				<img id="Marker_37" src="https://picsum.photos/200">
+				<img id="Marker_38" src="https://picsum.photos/800/400">
+        <img id="Marker_39" src="https://picsum.photos/200">
+				<img id="Marker_40" src="https://picsum.photos/700">
+				<img id="Marker_41" src="https://picsum.photos/200">
+				<img id="Marker_42" src="https://picsum.photos/200">
+				<img id="Marker_43" src="https://picsum.photos/800/400">
+        <img id="Marker_44" src="https://picsum.photos/200">
+				<img id="Marker_45" src="https://picsum.photos/700">
+				<img id="Marker_46" src="https://picsum.photos/200">
+				<img id="Marker_47" src="https://picsum.photos/200">
+				<img id="Marker_48" src="https://picsum.photos/800/400">
+        <img id="Marker_49" src="https://picsum.photos/200">
+				<img id="Marker_50" src="https://picsum.photos/700">
+				<img id="Marker_51" src="https://picsum.photos/200">
+				<img id="Marker_52" src="https://picsum.photos/200">
+				<img id="Marker_53" src="https://picsum.photos/800/400">
+        <img id="Marker_54" src="https://picsum.photos/200">
+				<img id="Marker_55" src="https://picsum.photos/700">
+				<img id="Marker_56" src="https://picsum.photos/200">
+				<img id="Marker_57" src="https://picsum.photos/200">
+				<img id="Marker_58" src="https://picsum.photos/800/400">
+        <img id="Marker_59" src="https://picsum.photos/800/400">
 			</a-assets>
 			
     		<a-entity id='userCamera' camera>
@@ -216,6 +252,27 @@ shapes.forEach((shape, index) => {
 					  "body").style.visibility = "visible";
 				}
 			};
+
+
+
+      // HIDE/ SHOW GROUND
+      window.addEventListener('deviceorientation', handleOrientation);
+
+      function handleOrientation(event) {
+        const beta = event.beta;
+
+        if (beta < 49) {
+          document.querySelector(
+					  "#wall").style.visibility = "hidden";
+					document.querySelector(
+					  "#ground").style.visibility = "visible";
+				} else {
+					document.querySelector(
+					  "#ground").style.display = "none";
+					document.querySelector(
+					  "#wall").style.visibility = "visible";
+				}
+}
 		</script>
 
 
