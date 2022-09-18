@@ -33,13 +33,13 @@ AFRAME.registerComponent('markers_start',{
 			//Adding text to each marker
 			var img = document.createElement('a-image');
 			
-			img.setAttribute('src','#' + markersNameArray[k]);
-			img.setAttribute('link','href: https://ar.cerq.com/redirect.html?link=' + markersNameArray[k]);
-			img.setAttribute('id',markersNameArray[k]);
-			img.setAttribute('scale','4 4 4'); 
+			img.setAttribute('scale','4 4 1'); 
 			img.setAttribute('class','image clickable');
 			img.object3D.position.set(0, 0.3, 0);
 			img.object3D.rotation.set(250, 0, 0);
+			img.setAttribute('src','#' + markersNameArray[k]);
+			img.setAttribute('link','href: https://ar.cerq.com/redirect.html?link=' + markersNameArray[k]);
+			img.setAttribute('id',markersNameArray[k]);
 
 			markerEl.appendChild(img);
 		}
