@@ -1,5 +1,3 @@
-//Multi Markers WebAR-AR.js and Aframe - Playing the Archive - Connected Environment CASA-UCL
-
 //Global Variable
 var markersURLArray=[];
 var markersNameArray=[];
