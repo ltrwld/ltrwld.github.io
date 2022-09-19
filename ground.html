@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>27 AR Wall - CERQ</title>
+    <meta name="description" content="AR Wall - CERQ">
+	 <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+	 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+	 
+	  <script src="js/groundmultiMarkersName.js"></script>
+	</head>
+	<body style="width: 100vw !important;
+	height: 100vh !important; margin : 0px; overflow: hidden;">
+
+
+<div id="loader" class="arjs-loader">
+	<shape></shape><shape></shape><shape></shape>
+</div>
+
+<!--HEADER-->
+<div class="top-gradient"></div>
+
+
+		<a-scene loading-screen="enabled: false;"
+				 cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
+				 raycaster="objects: .clickable"
+				 markers_start
+				 vr-mode-ui="enabled: false" 
+				 color-space="sRGB" 
+				 renderer="gammaOutput: true" 
+				 embedded arjs='debugUIEnabled: false; 
+				 				sourceType: webcam; 
+								patternRatio: 0.85; 
+								trackingMethod: best;' 
+				 embedded
+				 gesture-detector>
+			<a-assets>
+				<img id="Marker_1" src="content/block-1.png">
+				<img id="Marker_2" src="content/block-2.png">
+				<img id="Marker_3" src="https://picsum.photos/200/500">
+				<img id="Marker_4" src="content/block-4.png">
+				<img id="Marker_5" src="content/block-5.png">
+				<img id="Marker_6" src="https://picsum.photos/200">
+				<img id="Marker_7" src="content/block-7.png">
+				<img id="Marker_8" src="https://picsum.photos/200">
+				<img id="Marker_9" src="https://picsum.photos/200">
+				<img id="Marker_10" src="https://picsum.photos/200">
+				<img id="Marker_11" src="https://picsum.photos/200">
+				<img id="Marker_12" src="https://picsum.photos/200">
+				<img id="Marker_13" src="https://picsum.photos/200">
+				<img id="Marker_14" src="https://picsum.photos/200">
+				<img id="Marker_15" src="https://picsum.photos/200">
+				<img id="Marker_16" src="https://picsum.photos/200">
+				<img id="Marker_17" src="https://picsum.photos/200">
+			  <video id="Marker_18" autoplay loop="true" src="https://cerq.com/hubfs/videos/Marker_18.mp4"></video>
+			</a-assets>
+			
+    		<a-entity id='userCamera' camera>
+				
+    		</a-entity>
+		</a-scene>
+
+
+<script>
+	var portrait = window.innerWidth < window.innerHeight;
+	var PleaseRotateOptions = {
+	  startOnPageLoad: true,
+	  forcePortrait: false,
+	  message: "Please Rotate Your Device",
+	  subMessage: "(or click to continue)",
+	  allowClickBypass: false,
+	  onlyMobile: true,
+	  zIndex: 1000,
+	  iconNode: null
+	}
+  
+  </script>
+  <script src="js/pleaserotate.js"></script>
+
+	</body>
+</html>
