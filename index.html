@@ -272,11 +272,11 @@ shapes.forEach((shape, index) => {
         const gamma = event.gamma;
 
         // IF NEGATIVE CORRECT TO POSITIVE
-        function isNegative(gamma) {
-          if (Math.sign(gamma) === -1) {
-            const gamma = Math.abs(gamma);
-          }
+        if (num < 0) {
+            //convert n to positive integer
+            const gamma = gamma * -1
         }
+        
 
         if (gamma < 49) {
           document.querySelector(
