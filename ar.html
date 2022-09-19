@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>27 AR Wall - CERQ</title>
+    <meta name="description" content="AR Wall - CERQ">
+	 <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+	 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+	 
+	  <script src="js/multiMarkersName.js"></script>
+	</head>
+	<body style="width: 100vw !important;
+	height: 100vh !important; margin : 0px; overflow: hidden;">
+
+<style>
+.top-gradient {
+    display: flex;
+	position: sticky;
+    top: 0;
+}
+.top-gradient:after {
+    background: #9643e5;
+    background: linear-gradient(90deg,#9643e5 40%,#ffdc00 62%);
+    content: "";
+    height: 9px;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*LOADING ANIMATION*/
+:root {
+  --base_scale: 5vh;
+  --floor: 15vh;
+  --color: #836ee5;
+}
+
+shape {
+  position: absolute;
+  display: block;
+  left: 50%;
+  bottom: 0;
+  margin-left: calc(-1 * (var(--base_scale) / 2));
+  margin-bottom: var(--floor);
+}
+shape.circle {
+  width: var(--base_scale);
+  height: var(--base_scale);
+  background: var(--color);
+  border-radius: 50%;
+}
+shape.semi-circle {
+  height: calc(var(--base_scale) * 2);
+  width: var(--base_scale);
+  background: var(--color);
+  border-bottom-right-radius: calc(var(--base_scale) * 2);
+  border-top-right-radius: calc(var(--base_scale) * 2);
+}
+shape.square {
+  width: var(--base_scale);
+  height: var(--base_scale);
+  background: var(--color);
+}
+shape.rectangle {
+  width: calc(var(--base_scale) * 1.5);
+  height: var(--base_scale);
+  background: var(--color);
+}
+shape.triangle {
+  width: 0;
+  height: 0;
+  border-bottom: var(--base_scale) solid var(--color);
+  border-right: var(--base_scale) solid transparent;
+}
+shape.triangle-2 {
+  width: 0;
+  height: 0;
+  border-top: var(--base_scale) solid var(--color);
+  border-left: var(--base_scale) solid transparent;
+}
+shape.bounce-up {
+  --bounce-variance: 0vh;
+  --bounce-height: calc(
+    -1 * 50vh - calc(var(--base_scale) - var(--floor) + var(--bounce-variance))
+  );
+  transition: transform 400ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform: translateY(var(--bounce-height)) rotate(0deg);
+}
+shape.bounce-down {
+  transition: transform 300ms cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  transform: translateY(0) rotate(var(--rotation));
+}
+
+a {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  color: rgba(0, 0, 0, 0.3);
+  z-index: 12;
+  font-size: 0.9em;
+}
+
+#ground {
+  position: absolute;
+    right: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+</style>
+
+<div id="loader" class="arjs-loader">
+	<shape></shape><shape></shape><shape></shape>
+</div>
+
+<!--HEADER-->
+<div class="top-gradient"></div>
+
+
+<iframe id="ground" src="ground.html" style="display: none;"></iframe>
+
+		<a-scene id="wall" loading-screen="enabled: false;" style="display: none;"
+				 cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
+				 raycaster="objects: .clickable"
+				 markers_start
+				 vr-mode-ui="enabled: false" 
+				 color-space="sRGB" 
+				 renderer="gammaOutput: true" 
+				 embedded arjs='debugUIEnabled: false; 
+				 				sourceType: webcam; 
+								patternRatio: 0.85; 
+								trackingMethod: best;' 
+				 embedded
+				 gesture-detector>
+			<a-assets>
+				<img id="Marker_1" src="content/block-1.png">
+				<img id="Marker_2" src="content/block-2.png">
+				<img id="Marker_3" src="https://picsum.photos/200/500">
+				<img id="Marker_4" src="content/block-4.png">
+				<img id="Marker_5" src="content/block-5.png">
+				<img id="Marker_6" src="https://picsum.photos/200">
+				<img id="Marker_7" src="content/block-7.png">
+				<img id="Marker_8" src="https://picsum.photos/200">
+				<img id="Marker_9" src="https://picsum.photos/200">
+				<img id="Marker_10" src="https://picsum.photos/200">
+				<img id="Marker_11" src="https://picsum.photos/200">
+				<img id="Marker_12" src="https://picsum.photos/200">
+				<img id="Marker_13" src="https://picsum.photos/200">
+				<img id="Marker_14" src="https://picsum.photos/200">
+				<img id="Marker_15" src="https://picsum.photos/200">
+				<img id="Marker_16" src="https://picsum.photos/200">
+				<img id="Marker_17" src="https://picsum.photos/200">
+			  <video id="Marker_18" autoplay loop="true" src="https://cerq.com/hubfs/videos/Marker_18.mp4"></video>
+				<img id="Marker_19" src="https://picsum.photos/200">
+				<img id="Marker_20" src="https://picsum.photos/700">
+				<img id="Marker_21" src="https://picsum.photos/200">
+				<img id="Marker_22" src="https://picsum.photos/200">
+				<img id="Marker_23" src="https://picsum.photos/800/400">
+        <img id="Marker_24" src="https://picsum.photos/200">
+				<img id="Marker_25" src="https://picsum.photos/700">
+				<img id="Marker_26" src="https://picsum.photos/200">
+				<img id="Marker_27" src="https://picsum.photos/200">
+				<img id="Marker_28" src="https://picsum.photos/800/400">
+        <img id="Marker_29" src="https://picsum.photos/200">
+				<img id="Marker_30" src="https://picsum.photos/700">
+				<img id="Marker_31" src="https://picsum.photos/200">
+				<img id="Marker_32" src="https://picsum.photos/200">
+				<img id="Marker_33" src="https://picsum.photos/800/400">
+        <img id="Marker_34" src="https://picsum.photos/200">
+				<img id="Marker_35" src="https://picsum.photos/700">
+				<img id="Marker_36" src="https://picsum.photos/200">
+				<img id="Marker_37" src="https://picsum.photos/200">
+				<img id="Marker_38" src="https://picsum.photos/800/400">
+        <img id="Marker_39" src="https://picsum.photos/200">
+				<img id="Marker_40" src="https://picsum.photos/700">
+				<img id="Marker_41" src="https://picsum.photos/200">
+				<img id="Marker_42" src="https://picsum.photos/200">
+				<img id="Marker_43" src="https://picsum.photos/800/400">
+        <img id="Marker_44" src="https://picsum.photos/200">
+				<img id="Marker_45" src="https://picsum.photos/700">
+				<img id="Marker_46" src="https://picsum.photos/200">
+				<img id="Marker_47" src="https://picsum.photos/200">
+				<img id="Marker_48" src="https://picsum.photos/800/400">
+        <img id="Marker_49" src="https://picsum.photos/200">
+				<img id="Marker_50" src="https://picsum.photos/700">
+				<img id="Marker_51" src="https://picsum.photos/200">
+				<img id="Marker_52" src="https://picsum.photos/200">
+				<img id="Marker_53" src="https://picsum.photos/800/400">
+        <img id="Marker_54" src="https://picsum.photos/200">
+				<img id="Marker_55" src="https://picsum.photos/700">
+				<img id="Marker_56" src="https://picsum.photos/200">
+				<img id="Marker_57" src="https://picsum.photos/200">
+				<img id="Marker_58" src="https://picsum.photos/800/400">
+        <img id="Marker_59" src="https://picsum.photos/800/400">
+			</a-assets>
+			
+    		<a-entity id='userCamera' camera>
+				
+    		</a-entity>
+		</a-scene>
+
+
+		<!--LOADING SCRIPT-->
+		<script>
+		const doc = document,
+types = ['circle', 'semi-circle', 'square', 'triangle', 'triangle-2', 'rectangle'],
+colors = ['#836ee5','#fe94b4','#49d2f5','#ff5354','#00b1b4','#ffe465','#0071ff','#03274b'];
+
+let shapes = doc.querySelectorAll('shape');
+
+shapes.forEach((shape, index) => {
+  setInterval(() => {
+    let cl = shape.classList;
+    shape.className = '';
+
+    //assign styles
+    cl.add(types[~~(Math.random()*types.length)]);
+    let offset = ((Math.random()*4))-2;
+    let opp = offset >= 0 ? '+ ': '- ';
+    let styles = [
+      ['left', 'calc(50% '+opp+offset+'vw)'],
+      ['--bounce-variance', ((Math.random()*20))-10 + 'vh'],
+      ['--base_scale', ((Math.random()*6))+4 + 'vh'],
+      ['--rotation', ((Math.random()*180))-90 + 'deg'],
+      ['--color', colors[~~(Math.random()*colors.length)]]
+    ];
+    styles.forEach(style => shape.style.setProperty(style[0], style[1]))
+    
+    //animate
+    if(!cl.contains('bounce-up')) cl.add('bounce-up');
+    cl.replace('bounce-down', 'bounce-up');
+    setTimeout(() => cl.replace('bounce-up', 'bounce-down'), 400)
+  
+  },740)
+})
+
+
+</script>
+		<script>
+			document.onreadystatechange = function() {
+				if (document.readyState !== "complete") {
+					document.querySelector(
+					  "body").style.visibility = "hidden";
+					document.querySelector(
+					  "#loader").style.visibility = "visible";
+				} else {
+					document.querySelector(
+					  "#loader").style.display = "none";
+					document.querySelector(
+					  "body").style.visibility = "visible";
+				}
+			};
+
+
+
+      // HIDE/ SHOW GROUND
+      window.addEventListener('deviceorientation', handleOrientation);
+
+      function handleOrientation(event) {
+        const gamma = event.gamma;
+        
+
+        if (gamma < 49 && gamma > -49) {
+          document.querySelector(
+					  "#wall").style.display = "none";
+					document.querySelector(
+					  "#ground").style.display = "block";
+				} else {
+					document.querySelector(
+					  "#ground").style.display = "none";
+            document.querySelector(
+					  "#wall").style.display = "block";
+				}
+}
+		</script>
+
+
+
+
+	</body>
+</html>
