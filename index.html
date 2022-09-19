@@ -129,9 +129,9 @@ a {
 <div class="top-gradient"></div>
 
 
-<iframe id="ground" src="ground.html"></iframe>
+<iframe id="ground" src="ground.html" style="display: none;"></iframe>
 
-		<a-scene id="wall" loading-screen="enabled: false;" style="display: block;"
+		<a-scene id="wall" loading-screen="enabled: false;" style="display: none;"
 				 cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
 				 raycaster="objects: .clickable"
 				 markers_start
@@ -269,9 +269,16 @@ shapes.forEach((shape, index) => {
       window.addEventListener('deviceorientation', handleOrientation);
 
       function handleOrientation(event) {
-        const beta = event.beta;
+        const gamma = event.gamma;
 
-        if (beta < 49) {
+        // IF NEGATIVE CORRECT TO POSITIVE
+        function isNegative(gamma) {
+          if (Math.sign(gamma) === -1) {
+            const gamma = Math.abs(gamma);
+          }
+        }
+
+        if (gamma < 49) {
           document.querySelector(
 					  "#wall").style.display = "none";
 					document.querySelector(
