@@ -287,7 +287,21 @@ shapes.forEach((shape, index) => {
 		</script>
 
 
-
+<script>
+	var portrait = window.innerWidth < window.innerHeight;
+	var PleaseRotateOptions = {
+	  startOnPageLoad: true,
+	  forcePortrait: false,
+	  message: "Please Rotate Your Device",
+	  subMessage: "(or click to continue)",
+	  allowClickBypass: false,
+	  onlyMobile: true,
+	  zIndex: 1000,
+	  iconNode: null
+	}
+  
+  </script>
+  <script src="js/pleaserotate.js"></script>
 
 	</body>
 </html>
