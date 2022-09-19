@@ -27,7 +27,7 @@ h3 {
   opacity: 0;
   display: none;
 }
-@media screen and (min-width: 480px) and (max-width: 736px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+@media screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
   .landscape-overlay {
     display: block;
     animation: fadeIn 0.5s forwards ease;
@@ -66,20 +66,7 @@ h3 {
   transform: rotate(90deg);
   animation: sizeIncrease 0.5s 0.5s forwards ease, addBorder 0.5s 1s forwards ease-in, rotatePhone 0.5s 1s forwards cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-@keyframes sizeIncrease {
-  0 {
-    width: 0;
-    height: 30px;
-  }
-  50% {
-    width: 60px;
-    height: 30px;
-  }
-  100% {
-    width: 60px;
-    height: 120px;
-  }
-}
+
 @keyframes addBorder {
   100% {
     border-width: 16px 8px;
