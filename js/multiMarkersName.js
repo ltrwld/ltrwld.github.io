@@ -17,7 +17,7 @@ AFRAME.registerComponent('markers_start',{
 			//console.log(url);
 		}
 
-		for(var k=0; k<55; k++)
+		for(var k=18; k<59; k++)
 		{
 			var markerEl = document.createElement('a-marker');
 			const number = k;
